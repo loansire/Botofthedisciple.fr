@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Destiny 2 - Trait</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background-color: #121212;
+      color: #eee;
+    }
+    .card {
+      display: flex;
+      background-color: #1f1f1f;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      overflow: hidden;
+      max-width: 600px;
+    }
+    .icon {
+      width: 128px;
+      height: 128px;
+      object-fit: contain;
+      background-color: #2a2a2a;
+      padding: 0.5rem;
+    }
+    .content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .description {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div id="trait-card" class="card">
+    <img id="trait-icon" class="icon" src="" alt="Icone">
+    <div class="content">
+      <div id="trait-name" class="name"></div>
+      <div id="trait-description" class="description"></div>
+    </div>
+  </div>
+	<script>
+	  async function loadTrait() {
+		const urlParams = new URLSearchParams(window.location.search);
+		const id = urlParams.get('id');
+
+		if (!id) {
+		  alert("Aucun ID spécifié dans l'URL.");
+		  return;
+		}
+
+		const response = await fetch('trait_definitions.json');
+		const data = await response.json();
+
+		const trait = data[id];
+
+		if (!trait) {
+		  alert("Aucun trait trouvé pour l'ID " + id);
+		  return;
+		}
+
+		const name = trait.displayProperties?.name || "Nom inconnu";
+		const description = trait.displayProperties?.description || "Pas de description.";
+		const hasIcon = trait.displayProperties?.hasIcon;
+		const iconPath = trait.displayProperties?.icon;
+
+		document.getElementById("trait-name").textContent = name;
+		document.getElementById("trait-description").textContent = description;
+
+		const iconURL = hasIcon && iconPath
+		  ? "https://www.bungie.net" + iconPath
+		  : "https://via.placeholder.com/128?text=Aucune+icone";
+
+		document.getElementById("trait-icon").src = iconURL;
+	  }
+
+	  loadTrait();
+	</script>
+</body>
+</html>
