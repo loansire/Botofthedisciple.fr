@@ -817,8 +817,8 @@
   },
   "520867389": {
     "displayProperties": {
-      "description": "Quêtes liées aux didacticiels et introductions de l'expérience Nouvelle Lumière.",
-      "name": "Nouvelle Lumière",
+      "description": "QuÃªtes liÃ©es aux didacticiels et introductions de l'expÃ©rience Nouvelle LumiÃ¨re.",
+      "name": "Nouvelle LumiÃ¨re",
       "icon": "/common/destiny2_content/icons/f56a6ee985a64cf3ee1852419454a8db.png",
       "iconSequences": [
         {
@@ -857,7 +857,7 @@
   },
   "370766376": {
     "displayProperties": {
-      "description": "Quêtes d'équipements et de catalyseurs exotiques.",
+      "description": "QuÃªtes d'Ã©quipements et de catalyseurs exotiques.",
       "name": "Exotiques",
       "icon": "/common/destiny2_content/icons/2ffa90c58bdadcca8226f553315212e7.png",
       "iconSequences": [
@@ -897,7 +897,7 @@
   },
   "4105527943": {
     "displayProperties": {
-      "description": "Quêtes de la Saison actuelle.",
+      "description": "QuÃªtes de la Saison actuelle.",
       "name": "Saison",
       "icon": "/common/destiny2_content/icons/9f4e29f28797ddfab2a0ff1a68219bf2.png",
       "iconSequences": [
@@ -997,7 +997,7 @@
   },
   "3671004794": {
     "displayProperties": {
-      "description": "Quêtes de la Saison actuelle.",
+      "description": "QuÃªtes de la Saison actuelle.",
       "name": "Saison",
       "icon": "/common/destiny2_content/icons/9f4e29f28797ddfab2a0ff1a68219bf2.png",
       "iconSequences": [
@@ -1121,7 +1121,7 @@
   },
   "2878306895": {
     "displayProperties": {
-      "description": "Quêtes de la dernière extension.",
+      "description": "QuÃªtes de la derniÃ¨re extension.",
       "name": "La Forme Finale",
       "icon": "/common/destiny2_content/icons/c85d31941d969844410d6c88f477bc67.png",
       "iconSequences": [
@@ -1161,7 +1161,7 @@
   },
   "500105683": {
     "displayProperties": {
-      "description": "Quêtes de l'Avant-garde, de l'Épreuve et du Gambit.",
+      "description": "QuÃªtes de l'Avant-garde, de l'Ã‰preuve et du Gambit.",
       "name": "Programmes",
       "icon": "/common/destiny2_content/icons/65a31faec8334aa8dccf8c370f78dda1.png",
       "iconSequences": [
@@ -1201,8 +1201,8 @@
   },
   "2387836362": {
     "displayProperties": {
-      "description": "Quêtes issues d'extensions précédentes.",
-      "name": "Le Passé",
+      "description": "QuÃªtes issues d'extensions prÃ©cÃ©dentes.",
+      "name": "Le PassÃ©",
       "icon": "/common/destiny2_content/icons/98ab820785900cef91a4d0927935a8aa.png",
       "iconSequences": [
         {
@@ -1371,8 +1371,8 @@
   },
   "4263853822": {
     "displayProperties": {
-      "description": "Données de carrière si disponibles.",
-      "name": "Carrière",
+      "description": "DonnÃ©es de carriÃ¨re si disponibles.",
+      "name": "CarriÃ¨re",
       "icon": "/common/destiny2_content/icons/a04930d70103ffe7af5b3ef78e1c7a0c.png",
       "iconSequences": [
         {
@@ -1393,7 +1393,7 @@
   },
   "2230116619": {
     "displayProperties": {
-      "description": "Données de la saison en cours.",
+      "description": "DonnÃ©es de la saison en cours.",
       "name": "Saison",
       "icon": "/common/destiny2_content/icons/d94044d314b8d662459427143394d286.png",
       "iconSequences": [
@@ -1415,7 +1415,7 @@
   },
   "2356777566": {
     "displayProperties": {
-      "description": "Données de la semaine en cours.",
+      "description": "DonnÃ©es de la semaine en cours.",
       "name": "Semaine",
       "icon": "/common/destiny2_content/icons/44becdb3f9c8c7e71da64c81bbb037de.png",
       "iconSequences": [
@@ -1461,7 +1461,7 @@
   },
   "3488482714": {
     "displayProperties": {
-      "description": "Votre santé et vos boucliers se régénèrent au fil du temps. Ne peut être interrompu en subissant des dégâts.",
+      "description": "Votre santÃ© et vos boucliers se rÃ©gÃ©nÃ¨rent au fil du temps. Ne peut Ãªtre interrompu en subissant des dÃ©gÃ¢ts.",
       "name": "Restauration",
       "icon": "/common/destiny2_content/icons/d217d462107c92ba83dfb1485e4a4785.png",
       "iconSequences": [
@@ -1487,7 +1487,7 @@
   },
   "3263723277": {
     "displayProperties": {
-      "description": "Vous guérissez dans un éclat de Lumière solaire [Solaire] bienfaitrice.",
+      "description": "Vous guÃ©rissez dans un Ã©clat de LumiÃ¨re solaire [Solaire] bienfaitrice.",
       "name": "Soin",
       "icon": "/common/destiny2_content/icons/2b08b95003df89114495a15bfe3bdfc2.png",
       "iconSequences": [
@@ -1513,7 +1513,7 @@
   },
   "157469667": {
     "displayProperties": {
-      "description": "Vos armes sont améliorées par le pouvoir du Voyageur et infligent plus de dégâts aux combattants.\n\nSous l'effet de Radiance, vos armes percent les boucliers des [Perforation de bouclier] Champions bloqueurs et les étourdissent.",
+      "description": "Vos armes sont amÃ©liorÃ©es par le pouvoir du Voyageur et infligent plus de dÃ©gÃ¢ts aux combattants.\n\nSous l'effet de Radiance, vos armes percent les boucliers des [Perforation de bouclier] Champions bloqueurs et les Ã©tourdissent.",
       "name": "Radiance",
       "icon": "/common/destiny2_content/icons/a548069d59fa0bbf671da9e8ce31728e.png",
       "iconSequences": [
@@ -1539,7 +1539,7 @@
   },
   "37177486": {
     "displayProperties": {
-      "description": "Une concentration lumineuse d'énergie [Solaire] solaire. Quand on les ramasse, les Feux follets confèrent de l'énergie de grenade.",
+      "description": "Une concentration lumineuse d'Ã©nergie [Solaire] solaire. Quand on les ramasse, les Feux follets confÃ¨rent de l'Ã©nergie de grenade.",
       "name": "Feu follet",
       "icon": "/common/destiny2_content/icons/f860d3a456b1b3bbe8f32f0686d56e66.png",
       "iconSequences": [
@@ -1576,7 +1576,7 @@
   },
   "3291013836": {
     "displayProperties": {
-      "description": "Votre vitesse de déplacement et votre maniement d'arme sont grandement améliorés. Après un court sprint, votre vitesse de mouvement augmente encore.\n\nÉliminer des cibles rapidement avec des dégâts [Cryo-électrique] cryo-électriques vous confère Amplificateur.",
+      "description": "Votre vitesse de dÃ©placement et votre maniement d'arme sont grandement amÃ©liorÃ©s. AprÃ¨s un court sprint, votre vitesse de mouvement augmente encore.\n\nÃ‰liminer des cibles rapidement avec des dÃ©gÃ¢ts [Cryo-Ã©lectrique] cryo-Ã©lectriques vous confÃ¨re Amplificateur.",
       "name": "Amplificateur",
       "icon": "/common/destiny2_content/icons/cc6ce294e996af1310981de31b45fcdd.png",
       "iconSequences": [
@@ -1601,7 +1601,7 @@
   },
   "3824458961": {
     "displayProperties": {
-      "description": "Un éclair de pure énergie [Cryo-électrique] cryo-électrique qui se déplace le long du sol et cherche son créateur. Quand elles sont ramassées, les Pistes ioniques confèrent de l'énergie de compétence.",
+      "description": "Un Ã©clair de pure Ã©nergie [Cryo-Ã©lectrique] cryo-Ã©lectrique qui se dÃ©place le long du sol et cherche son crÃ©ateur. Quand elles sont ramassÃ©es, les Pistes ioniques confÃ¨rent de l'Ã©nergie de compÃ©tence.",
       "name": "Piste ionique",
       "icon": "/common/destiny2_content/icons/775777a47960f74df521545f7cf109f9.png",
       "iconSequences": [
@@ -1626,8 +1626,8 @@
   },
   "2935077680": {
     "displayProperties": {
-      "description": "Obtenez des cumuls de Charge éclair cryo-électrique. Lorsque vous disposez de Charge éclair, les dégâts d'arme continus génèrent des cumuls de Charge éclair. Lorsque les cumuls sont au maximum, tous les dégâts de compétence génèrent un puissant éclair cryo-électrique à l'emplacement de la cible.\n\nObtenir un cumul de Charge éclair vous confère de l'énergie de mêlée.",
-      "name": "Charge éclair",
+      "description": "Obtenez des cumuls de Charge Ã©clair cryo-Ã©lectrique. Lorsque vous disposez de Charge Ã©clair, les dÃ©gÃ¢ts d'arme continus gÃ©nÃ¨rent des cumuls de Charge Ã©clair. Lorsque les cumuls sont au maximum, tous les dÃ©gÃ¢ts de compÃ©tence gÃ©nÃ¨rent un puissant Ã©clair cryo-Ã©lectrique Ã  l'emplacement de la cible.\n\nObtenir un cumul de Charge Ã©clair vous confÃ¨re de l'Ã©nergie de mÃªlÃ©e.",
+      "name": "Charge Ã©clair",
       "icon": "/common/destiny2_content/icons/1a6c7927114c00751fcd2eeed6054563.png",
       "iconSequences": [
         {
@@ -1663,8 +1663,8 @@
   },
   "655301426": {
     "displayProperties": {
-      "description": "Vous disparaissez du champ de vision et n'apparaissez plus sur le radar. Lorsque vous êtes invisible, la portée de votre radar est réduite. Réaliser des actions offensives mettra fin à l'invisibilité.",
-      "name": "Invisibilité",
+      "description": "Vous disparaissez du champ de vision et n'apparaissez plus sur le radar. Lorsque vous Ãªtes invisible, la portÃ©e de votre radar est rÃ©duite. RÃ©aliser des actions offensives mettra fin Ã  l'invisibilitÃ©.",
+      "name": "InvisibilitÃ©",
       "icon": "/common/destiny2_content/icons/8e0485ef4872e0d9050fa194e77909ae.png",
       "iconSequences": [
         {
@@ -1688,8 +1688,8 @@
   },
   "3078132110": {
     "displayProperties": {
-      "description": "Régalez-vous de l'énergie de vos ennemis vaincus. Les frags restaurent de la santé, vous octroient de l'énergie de grenade et prolongent Dévoration.",
-      "name": "Dévoration",
+      "description": "RÃ©galez-vous de l'Ã©nergie de vos ennemis vaincus. Les frags restaurent de la santÃ©, vous octroient de l'Ã©nergie de grenade et prolongent DÃ©voration.",
+      "name": "DÃ©voration",
       "icon": "/common/destiny2_content/icons/b14b40b03ae4d8007cb991e3c4399c31.png",
       "iconSequences": [
         {
@@ -1713,7 +1713,7 @@
   },
   "2485406866": {
     "displayProperties": {
-      "description": "Une barrière de Lumière [Abyssal] abyssale vous protège, elle réduit les dégâts reçus de la part des combattants.",
+      "description": "Une barriÃ¨re de LumiÃ¨re [Abyssal] abyssale vous protÃ¨ge, elle rÃ©duit les dÃ©gÃ¢ts reÃ§us de la part des combattants.",
       "name": "Surbouclier",
       "icon": "/common/destiny2_content/icons/7f8a9954b11690dcb4ae8010e8032ae6.png",
       "iconSequences": [
@@ -1738,8 +1738,8 @@
   },
   "3328352616": {
     "displayProperties": {
-      "description": "Une rupture dimensionnelle regorgeant d'énergie [Abyssal] abyssale. Quand vous les ramassez, les Brèches abyssales octroient de l'énergie de compétence de classe.",
-      "name": "Brèche abyssale",
+      "description": "Une rupture dimensionnelle regorgeant d'Ã©nergie [Abyssal] abyssale. Quand vous les ramassez, les BrÃ¨ches abyssales octroient de l'Ã©nergie de compÃ©tence de classe.",
+      "name": "BrÃ¨che abyssale",
       "icon": "/common/destiny2_content/icons/cfc3558f69b69fdd57c0f73dfa1ea9a0.png",
       "iconSequences": [
         {
@@ -1775,7 +1775,7 @@
   },
   "3385340084": {
     "displayProperties": {
-      "description": "Un cristal de stase [Stase] solidifiée. À sa création, il gèle les combattants proches et ralentit les joueurs proches.\n\nLes cristaux peuvent être détruits, infligeant ainsi des dégâts dans la zone.",
+      "description": "Un cristal de stase [Stase] solidifiÃ©e. Ã€ sa crÃ©ation, il gÃ¨le les combattants proches et ralentit les joueurs proches.\n\nLes cristaux peuvent Ãªtre dÃ©truits, infligeant ainsi des dÃ©gÃ¢ts dans la zone.",
       "name": "Cristal de stase",
       "icon": "/common/destiny2_content/icons/3907940dad92f2b35253d041d083830a.png",
       "iconSequences": [
@@ -1800,8 +1800,8 @@
   },
   "4043161234": {
     "displayProperties": {
-      "description": "Un petit éclat stasique [Stase] qui peut se ramasser pour restaurer l'énergie de mêlée.",
-      "name": "Éclat stasique",
+      "description": "Un petit Ã©clat stasique [Stase] qui peut se ramasser pour restaurer l'Ã©nergie de mÃªlÃ©e.",
+      "name": "Ã‰clat stasique",
       "icon": "/common/destiny2_content/icons/61e76efa20781304ec9496432ac599c8.png",
       "iconSequences": [
         {
@@ -1825,7 +1825,7 @@
   },
   "106947924": {
     "displayProperties": {
-      "description": "Des couches de matière [Stase] stasique durable vous renforcent, réduisant les dégâts subis. La résistance aux dégâts d'Armure de givre augmente à chaque cumul supplémentaire.",
+      "description": "Des couches de matiÃ¨re [Stase] stasique durable vous renforcent, rÃ©duisant les dÃ©gÃ¢ts subis. La rÃ©sistance aux dÃ©gÃ¢ts d'Armure de givre augmente Ã  chaque cumul supplÃ©mentaire.",
       "name": "Armure de givre",
       "icon": "/common/destiny2_content/icons/f4d5caae209cf7421e13a4352724f742.png",
       "iconSequences": [
@@ -1862,8 +1862,8 @@
   },
   "3173573497": {
     "displayProperties": {
-      "description": "Votre corps est protégé par une maille protectrice de [Filobscur] filobscur serré, qui réduit grandement les dégâts qui ne sont pas de précision.",
-      "name": "Maille tissée",
+      "description": "Votre corps est protÃ©gÃ© par une maille protectrice de [Filobscur] filobscur serrÃ©, qui rÃ©duit grandement les dÃ©gÃ¢ts qui ne sont pas de prÃ©cision.",
+      "name": "Maille tissÃ©e",
       "icon": "/common/destiny2_content/icons/4e86fbbeaf00f584a93e231dd2e36421.png",
       "iconSequences": [
         {
@@ -1887,8 +1887,8 @@
   },
   "1577394840": {
     "displayProperties": {
-      "description": "Un nœud de [Filobscur] filobscur, qui grouille de potentialités. Les Enchevêtrements peuvent être pris pour cibles et détruits, ou bien ramassés et lancés, ce qui inflige des dégâts.\n\nÉliminer des cibles affectées par n'importe quel malus de [Filobscur] filobscur les transformera en Enchevêtrement.",
-      "name": "Enchevêtrement",
+      "description": "Un nÅ“ud de [Filobscur] filobscur, qui grouille de potentialitÃ©s. Les EnchevÃªtrements peuvent Ãªtre pris pour cibles et dÃ©truits, ou bien ramassÃ©s et lancÃ©s, ce qui inflige des dÃ©gÃ¢ts.\n\nÃ‰liminer des cibles affectÃ©es par n'importe quel malus de [Filobscur] filobscur les transformera en EnchevÃªtrement.",
+      "name": "EnchevÃªtrement",
       "icon": "/common/destiny2_content/icons/bd77407f3bd35870a76b43d3d2c5d329.png",
       "iconSequences": [
         {
@@ -1912,7 +1912,7 @@
   },
   "2724747993": {
     "displayProperties": {
-      "description": "Une créature tissée de pure matière filobscure qui traque les cibles proches et leur inflige des dégâts.",
+      "description": "Une crÃ©ature tissÃ©e de pure matiÃ¨re filobscure qui traque les cibles proches et leur inflige des dÃ©gÃ¢ts.",
       "name": "Brindille",
       "icon": "/common/destiny2_content/icons/69729ce3eb247809620f30c1ea46fb42.png",
       "iconSequences": [
@@ -1973,7 +1973,7 @@
   },
   "345967499": {
     "displayProperties": {
-      "description": "Vous résonnez en parfaite harmonie avec la Lumière et les Ténèbres. Vous améliorez ainsi votre régénération de compétence et augmentez vos dégâts d'arme et votre résistance aux dégâts face aux combattants.\n\nVotre grenade est remplacée par une grenade prismatique unique combinant plusieurs types de dégâts. Éliminer des cibles quand vous êtes sous l'effet de Transcendance augmente sa durée.",
+      "description": "Vous rÃ©sonnez en parfaite harmonie avec la LumiÃ¨re et les TÃ©nÃ¨bres. Vous amÃ©liorez ainsi votre rÃ©gÃ©nÃ©ration de compÃ©tence et augmentez vos dÃ©gÃ¢ts d'arme et votre rÃ©sistance aux dÃ©gÃ¢ts face aux combattants.\n\nVotre grenade est remplacÃ©e par une grenade prismatique unique combinant plusieurs types de dÃ©gÃ¢ts. Ã‰liminer des cibles quand vous Ãªtes sous l'effet de Transcendance augmente sa durÃ©e.",
       "name": "Transcendance",
       "icon": "/common/destiny2_content/icons/4647800a51389db133279a8ccf87f8be.png",
       "iconSequences": [
@@ -1998,8 +1998,8 @@
   },
   "2713325501": {
     "displayProperties": {
-      "description": "Les bonus de Lumière incluent [Cryo-électrique] Amplificateur, [Cryo-électrique] Charge éclair, [Solaire] Soin, [Solaire] Radiance, [Solaire] Restauration, [Abyssal] Dévoration, [Abyssal] Invisibilité et [Abyssal] Surbouclier.",
-      "name": "Bonus de Lumière",
+      "description": "Les bonus de LumiÃ¨re incluent [Cryo-Ã©lectrique] Amplificateur, [Cryo-Ã©lectrique] Charge Ã©clair, [Solaire] Soin, [Solaire] Radiance, [Solaire] Restauration, [Abyssal] DÃ©voration, [Abyssal] InvisibilitÃ© et [Abyssal] Surbouclier.",
+      "name": "Bonus de LumiÃ¨re",
       "icon": "/common/destiny2_content/icons/b69ea795e7f861c5f6cd4718a7026938.png",
       "iconSequences": [
         {
@@ -2023,8 +2023,8 @@
   },
   "1891050213": {
     "displayProperties": {
-      "description": "Les bonus des Ténèbres incluent [Stase] Armure de givre et [Filobscur] Maille tissée.",
-      "name": "Bonus des Ténèbres",
+      "description": "Les bonus des TÃ©nÃ¨bres incluent [Stase] Armure de givre et [Filobscur] Maille tissÃ©e.",
+      "name": "Bonus des TÃ©nÃ¨bres",
       "icon": "/common/destiny2_content/icons/75581bdecbbdc1165a5c929549d1e18c.png",
       "iconSequences": [
         {
@@ -2048,8 +2048,8 @@
   },
   "3023190802": {
     "displayProperties": {
-      "description": "Les malus de Lumière incluent [Cryo-électrique] Cécité, [Cryo-électrique] Secousse, [Solaire] Blessure solaire, [Solaire] Embrasement, [Abyssal] Neutralisation, [Abyssal] Volatil et [Abyssal] Affaiblissement.",
-      "name": "Malus de Lumière",
+      "description": "Les malus de LumiÃ¨re incluent [Cryo-Ã©lectrique] CÃ©citÃ©, [Cryo-Ã©lectrique] Secousse, [Solaire] Blessure solaire, [Solaire] Embrasement, [Abyssal] Neutralisation, [Abyssal] Volatil et [Abyssal] Affaiblissement.",
+      "name": "Malus de LumiÃ¨re",
       "icon": "/common/destiny2_content/icons/cdd855a2fc535b406d6a09adc395a621.png",
       "iconSequences": [
         {
@@ -2073,8 +2073,8 @@
   },
   "1514833946": {
     "displayProperties": {
-      "description": "Les malus des Ténèbres incluent [Stase] Ralentissement, [Stase] Gel, [Filobscur] Sectionnement, [Filobscur] Suspension et [Filobscur] Effilochage.",
-      "name": "Malus des Ténèbres",
+      "description": "Les malus des TÃ©nÃ¨bres incluent [Stase] Ralentissement, [Stase] Gel, [Filobscur] Sectionnement, [Filobscur] Suspension et [Filobscur] Effilochage.",
+      "name": "Malus des TÃ©nÃ¨bres",
       "icon": "/common/destiny2_content/icons/ffa7bf9f0dcd5708a44ebe1ea21cbc46.png",
       "iconSequences": [
         {
@@ -2122,7 +2122,7 @@
   },
   "1096356879": {
     "displayProperties": {
-      "description": "La cible est brûlée par une Lumière solaire [Solaire] destructrice et subit des dégâts avec le temps. Ces dégâts augmentent en même temps que la cible cumule plus de Blessures solaires.\n\nUne fois qu'assez de Blessures solaires se sont accumulées sur la cible, elle s'embrase.",
+      "description": "La cible est brÃ»lÃ©e par une LumiÃ¨re solaire [Solaire] destructrice et subit des dÃ©gÃ¢ts avec le temps. Ces dÃ©gÃ¢ts augmentent en mÃªme temps que la cible cumule plus de Blessures solaires.\n\nUne fois qu'assez de Blessures solaires se sont accumulÃ©es sur la cible, elle s'embrase.",
       "name": "Blessure solaire",
       "icon": "/common/destiny2_content/icons/38a25fef5ab7fca31e4ceeeb2d5b8a9a.png",
       "iconSequences": [
@@ -2148,7 +2148,7 @@
   },
   "3268862716": {
     "displayProperties": {
-      "description": "Une grande explosion [Solaire] solaire qui inflige des dégâts dans une zone autour de la cible et étourdit les [Chancellement] Champions implacables.",
+      "description": "Une grande explosion [Solaire] solaire qui inflige des dÃ©gÃ¢ts dans une zone autour de la cible et Ã©tourdit les [Chancellement] Champions implacables.",
       "name": "Embrasement",
       "icon": "/common/destiny2_content/icons/a9f9c3ee61dca93b76abd3fee8323864.png",
       "iconSequences": [
@@ -2186,7 +2186,7 @@
   },
   "3221118171": {
     "displayProperties": {
-      "description": "La cible est énergisée par une Lumière [Cryo-électrique] cryo-électrique destructrice. Sous l'effet de Secousse, elle subit des dégâts supplémentaires et inflige la foudre en chaîne aux cibles proches.\n\nLes dégâts de Secousse étourdissent les [Perturbation] Champions implacables.",
+      "description": "La cible est Ã©nergisÃ©e par une LumiÃ¨re [Cryo-Ã©lectrique] cryo-Ã©lectrique destructrice. Sous l'effet de Secousse, elle subit des dÃ©gÃ¢ts supplÃ©mentaires et inflige la foudre en chaÃ®ne aux cibles proches.\n\nLes dÃ©gÃ¢ts de Secousse Ã©tourdissent les [Perturbation] Champions implacables.",
       "name": "Secousse",
       "icon": "/common/destiny2_content/icons/5c5922023e24197459e52dded0bb97ae.png",
       "iconSequences": [
@@ -2211,8 +2211,8 @@
   },
   "500183315": {
     "displayProperties": {
-      "description": "Les combattants sont désorientés et ne peuvent pas tirer. L'interface des Gardiens adverses est retirée et leur vision obscurcie.\n\nLorsqu'ils sont aveuglés, les [Chancellement] Champions implacables sont étourdis.",
-      "name": "Cécité",
+      "description": "Les combattants sont dÃ©sorientÃ©s et ne peuvent pas tirer. L'interface des Gardiens adverses est retirÃ©e et leur vision obscurcie.\n\nLorsqu'ils sont aveuglÃ©s, les [Chancellement] Champions implacables sont Ã©tourdis.",
+      "name": "CÃ©citÃ©",
       "icon": "/common/destiny2_content/icons/038cc5626aba34f106fc4b35d5e1b4e1.png",
       "iconSequences": [
         {
@@ -2248,7 +2248,7 @@
   },
   "3336638905": {
     "displayProperties": {
-      "description": "La cible reçoit plus de dégâts et ses mouvements sont ralentis.",
+      "description": "La cible reÃ§oit plus de dÃ©gÃ¢ts et ses mouvements sont ralentis.",
       "name": "Affaiblissement",
       "icon": "/common/destiny2_content/icons/793b0ba05e19f6e8cca31859cd1c3d14.png",
       "iconSequences": [
@@ -2273,7 +2273,7 @@
   },
   "2578642829": {
     "displayProperties": {
-      "description": "La cible est privée de toute compétence active, elle ne peut activer aucune compétence ni mode de mouvement pendant que la Neutralisation est active. Les combattants touchés ne peuvent pas utiliser leurs armes.\n\nQuand ils sont neutralisés, les [Perturbation] Champions surchargés sont aussi étourdis.",
+      "description": "La cible est privÃ©e de toute compÃ©tence active, elle ne peut activer aucune compÃ©tence ni mode de mouvement pendant que la Neutralisation est active. Les combattants touchÃ©s ne peuvent pas utiliser leurs armes.\n\nQuand ils sont neutralisÃ©s, les [Perturbation] Champions surchargÃ©s sont aussi Ã©tourdis.",
       "name": "Neutralisation",
       "icon": "/common/destiny2_content/icons/740d30660c05efeb92f2b0284b2d4e76.png",
       "iconSequences": [
@@ -2298,7 +2298,7 @@
   },
   "4105407564": {
     "displayProperties": {
-      "description": "La cible est affectée par de l'énergie [Abyssal] abyssale instable et explosera si elle reçoit des dégâts supplémentaires.\n\nLes munitions volatiles de vos armes [Abyssal] abyssales percent les boucliers des [Perforation de bouclier] Champions bloqueurs et les étourdissent.",
+      "description": "La cible est affectÃ©e par de l'Ã©nergie [Abyssal] abyssale instable et explosera si elle reÃ§oit des dÃ©gÃ¢ts supplÃ©mentaires.\n\nLes munitions volatiles de vos armes [Abyssal] abyssales percent les boucliers des [Perforation de bouclier] Champions bloqueurs et les Ã©tourdissent.",
       "name": "Volatile",
       "icon": "/common/destiny2_content/icons/58db3ed045faba9a408528cd41e31186.png",
       "iconSequences": [
@@ -2335,7 +2335,7 @@
   },
   "4239423954": {
     "displayProperties": {
-      "description": "La cible voit sa vitesse de mouvement et sa régénération de compétence ralenties. Les performances de ses armes sont réduites. Les Champions [Perturbation] implacables sont étourdis.\n\nAprès avoir cumulé assez de ralentissements, la cible est gelée.",
+      "description": "La cible voit sa vitesse de mouvement et sa rÃ©gÃ©nÃ©ration de compÃ©tence ralenties. Les performances de ses armes sont rÃ©duites. Les Champions [Perturbation] implacables sont Ã©tourdis.\n\nAprÃ¨s avoir cumulÃ© assez de ralentissements, la cible est gelÃ©e.",
       "name": "Ralentissement",
       "icon": "/common/destiny2_content/icons/6754987f7a61f4f292dcaec823d1a0a7.png",
       "iconSequences": [
@@ -2360,7 +2360,7 @@
   },
   "2968599152": {
     "displayProperties": {
-      "description": "La cible est piégée dans de la matière [Stase] stasique et ne peut plus bouger.\n\nSi elle subit des dégâts supplémentaires pendant qu'elle est gelée, la cible se brise.",
+      "description": "La cible est piÃ©gÃ©e dans de la matiÃ¨re [Stase] stasique et ne peut plus bouger.\n\nSi elle subit des dÃ©gÃ¢ts supplÃ©mentaires pendant qu'elle est gelÃ©e, la cible se brise.",
       "name": "Gel",
       "icon": "/common/destiny2_content/icons/cf81b048bf3ede7a7295ddf79cb48b49.png",
       "iconSequences": [
@@ -2385,7 +2385,7 @@
   },
   "37938188": {
     "displayProperties": {
-      "description": "Quand une cible gelée se brise, elle subit des dégâts et en inflige aux cibles proches.\n\nLes dégâts de Brisure étourdissent les [Chancellement] Champions implacables.",
+      "description": "Quand une cible gelÃ©e se brise, elle subit des dÃ©gÃ¢ts et en inflige aux cibles proches.\n\nLes dÃ©gÃ¢ts de Brisure Ã©tourdissent les [Chancellement] Champions implacables.",
       "name": "Brisure",
       "icon": "/common/destiny2_content/icons/6f945ea91734328150c7523fcb52977c.png",
       "iconSequences": [
@@ -2422,7 +2422,7 @@
   },
   "2679722414": {
     "displayProperties": {
-      "description": "La cible est immobilisée par une toile de [Filobscur] filobscur qui la soulève dans les airs. Une fois en Suspension, les Gardiens sont incapables de se déplacer librement, les combattants sont incapables de se déplacer ou d'utiliser leur arme, et les [Chancellement]Champions implacables sont étourdis.\n\nLes cibles en Suspension se transforment en Enchevêtrement une fois éliminées.",
+      "description": "La cible est immobilisÃ©e par une toile de [Filobscur] filobscur qui la soulÃ¨ve dans les airs. Une fois en Suspension, les Gardiens sont incapables de se dÃ©placer librement, les combattants sont incapables de se dÃ©placer ou d'utiliser leur arme, et les [Chancellement]Champions implacables sont Ã©tourdis.\n\nLes cibles en Suspension se transforment en EnchevÃªtrement une fois Ã©liminÃ©es.",
       "name": "Suspension",
       "icon": "/common/destiny2_content/icons/cba22aa36145138ddcfb8ac7b7e6345e.png",
       "iconSequences": [
@@ -2447,7 +2447,7 @@
   },
   "2519102437": {
     "displayProperties": {
-      "description": "La connexion de la cible à son environnement est coupée, les dégâts qu'elle inflige sont nettement réduits.\n\nLes cibles sous l'effet de Sectionnement deviennent un Enchevêtrement une fois éliminées.",
+      "description": "La connexion de la cible Ã  son environnement est coupÃ©e, les dÃ©gÃ¢ts qu'elle inflige sont nettement rÃ©duits.\n\nLes cibles sous l'effet de Sectionnement deviennent un EnchevÃªtrement une fois Ã©liminÃ©es.",
       "name": "Sectionnement",
       "icon": "/common/destiny2_content/icons/cf68d8d1181768364c8388206700fb17.png",
       "iconSequences": [
@@ -2472,7 +2472,7 @@
   },
   "945613349": {
     "displayProperties": {
-      "description": "La cible est imprégnée de [Filobscur] filobscur destructeur. En subissant des dégâts supplémentaires, elle crée des projectiles effilochants qui traquent les cibles proches.\n\nLes munitions effilochantes de vos armes [Filobscur] filobscures percent les boucliers des [Perforation de bouclier]Champions implacables et les étourdissent.\n\nUne fois éliminées, les cibles effilochées deviennent un Enchevêtrement.",
+      "description": "La cible est imprÃ©gnÃ©e de [Filobscur] filobscur destructeur. En subissant des dÃ©gÃ¢ts supplÃ©mentaires, elle crÃ©e des projectiles effilochants qui traquent les cibles proches.\n\nLes munitions effilochantes de vos armes [Filobscur] filobscures percent les boucliers des [Perforation de bouclier]Champions implacables et les Ã©tourdissent.\n\nUne fois Ã©liminÃ©es, les cibles effilochÃ©es deviennent un EnchevÃªtrement.",
       "name": "Effilochage",
       "icon": "/common/destiny2_content/icons/adef08d701b936d839ca2c3fa35ffe3d.png",
       "iconSequences": [
