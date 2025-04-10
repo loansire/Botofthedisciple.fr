@@ -20,7 +20,7 @@
       max-width: 600px;
     }
     .icon {
-      width: 128px;
+      width: 80px;
       height: 128px;
       object-fit: contain;
       background-color: #2a2a2a;
@@ -54,41 +54,44 @@
 
   <script>
     async function loadTrait() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const id = urlParams.get('id');
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
 
-      if (!id) {
-        alert("Aucun ID spécifié dans l'URL.");
-        return;
-      }
+  if (!id) {
+    alert("Aucun ID spécifié dans l'URL.");
+    return;
+  }
 
-      const response = await fetch('trait_definitions.json');
-      const data = await response.json();
+  const response = await fetch('trait_definitions.json');
+  const arrayBuffer = await response.arrayBuffer();  // Récupère le fichier en tant qu'arrayBuffer
 
-      const trait = data[id];
+  // Utilisation de TextDecoder pour forcer l'encodage UTF-8
+  const decoder = new TextDecoder('utf-8');
+  const jsonString = decoder.decode(arrayBuffer);
+  const data = JSON.parse(jsonString);  // Parse les données JSON après décodage
 
-      if (!trait) {
-        alert("Aucun trait trouvé pour l'ID " + id);
-        return;
-      }
+  const trait = data[id];
 
-      const name = trait.displayProperties?.name || "Nom inconnu";
-      const description = trait.displayProperties?.description || "Pas de description.";
-      const hasIcon = trait.displayProperties?.hasIcon;
-      const iconPath = trait.displayProperties?.icon;
+  if (!trait) {
+    alert("Aucun trait trouvé pour l'ID " + id);
+    return;
+  }
 
-      document.getElementById("trait-name").textContent = name;
-      document.getElementById("trait-description").textContent = description;
+  const name = trait.displayProperties?.name || "Nom inconnu";
+  const description = trait.displayProperties?.description || "Pas de description.";
+  const hasIcon = trait.displayProperties?.hasIcon;
+  const iconPath = trait.displayProperties?.icon;
 
-      // Assurer la gestion de l'encodage UTF-8
-      const iconURL = hasIcon && iconPath
-        ? "https://www.bungie.net" + iconPath
-        : "https://via.placeholder.com/128?text=Aucune+icone";
+  document.getElementById("trait-name").textContent = name;
+  document.getElementById("trait-description").textContent = description;
 
-      document.getElementById("trait-icon").src = iconURL;
-    }
+  const iconURL = hasIcon && iconPath
+    ? "https://www.bungie.net" + iconPath
+    : "https://via.placeholder.com/128?text=Aucune+icone";
 
-    loadTrait();
+  document.getElementById("trait-icon").src = iconURL;
+}
+
   </script>
 </body>
 </html>
