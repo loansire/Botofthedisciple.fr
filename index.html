@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destiny 2 - Trait</title>
   <style>
     body {
@@ -17,6 +18,8 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       overflow: hidden;
       max-width: 600px;
+      margin: 0 auto;
+      flex-direction: row;
     }
     .icon {
       width: 80px;
@@ -30,6 +33,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      flex: 1;
     }
     .name {
       font-size: 1.5rem;
@@ -39,6 +43,28 @@
     .description {
       font-size: 1rem;
       opacity: 0.9;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .icon {
+        width: 120px;
+        height: 120px;
+      }
+
+      .name {
+        font-size: 1.2rem;
+      }
+
+      .description {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -52,49 +78,54 @@
   </div>
 
   <script>
-async function loadTrait() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
+    async function loadTrait() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
 
-  if (!id) {
-    alert("Aucun ID spécifié dans l'URL.");
-    return;
-  }
+      if (!id) {
+        alert("Aucun ID spécifié dans l'URL.");
+        return;
+      }
 
-  try {
-    const response = await fetch('trait_definitions.json');
-    const data = await response.json();
+      try {
+        const response = await fetch('trait_definitions.json');
+        const data = await response.json();
 
-    console.log('Data:', data);  // Debug : Afficher le JSON complet dans la console
+        const trait = data[id];
+        if (!trait) {
+          alert("Aucun trait trouvé pour l'ID " + id);
+          return;
+        }
 
-    const trait = data[id];
-    if (!trait) {
-      alert("Aucun trait trouvé pour l'ID " + id);
-      return;
+        const name = trait.displayProperties?.name || "Nom inconnu";
+        const description = trait.displayProperties?.description || "Pas de description.";
+        const hasIcon = trait.displayProperties?.hasIcon;
+        const iconPath = trait.displayProperties?.icon;
+
+        document.getElementById("trait-name").textContent = name;
+        document.getElementById("trait-description").textContent = description;
+
+        const iconURL = hasIcon && iconPath
+          ? "https://www.bungie.net" + iconPath
+          : "https://via.placeholder.com/128?text=Aucune+icone";
+
+        document.getElementById("trait-icon").src = iconURL;
+
+        // Changer le titre de l'onglet
+        document.title = name;
+
+        // Changer l'image de l'onglet
+        const favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.href = iconURL;
+        document.head.appendChild(favicon);
+
+      } catch (error) {
+        console.error("Erreur de chargement du JSON :", error);
+      }
     }
 
-    const name = trait.displayProperties?.name || "Nom inconnu";
-    const description = trait.displayProperties?.description || "Pas de description.";
-    const hasIcon = trait.displayProperties?.hasIcon;
-    const iconPath = trait.displayProperties?.icon;
-
-    console.log('Trait:', trait); // Debug : Afficher les données du trait sélectionné
-
-    document.getElementById("trait-name").textContent = name;
-    document.getElementById("trait-description").textContent = description;
-
-    const iconURL = hasIcon && iconPath
-      ? "https://www.bungie.net" + iconPath
-      : "https://via.placeholder.com/128?text=Aucune+icone";
-
-    document.getElementById("trait-icon").src = iconURL;
-
-  } catch (error) {
-    console.error("Erreur de chargement du JSON :", error);
-  }
-}
-
-loadTrait();
+    loadTrait();
   </script>
 </body>
 </html>
