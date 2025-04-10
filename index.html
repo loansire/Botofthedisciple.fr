@@ -52,41 +52,49 @@
   </div>
 
   <script>
-    async function loadTrait() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const id = urlParams.get('id');
+async function loadTrait() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
 
-      if (!id) {
-        alert("Aucun ID spécifié dans l'URL.");
-        return;
-      }
+  if (!id) {
+    alert("Aucun ID spécifié dans l'URL.");
+    return;
+  }
 
-      const response = await fetch('trait_definitions.json');
-      const data = await response.json();
+  try {
+    const response = await fetch('trait_definitions.json');
+    const data = await response.json();
 
-      const trait = data[id];
+    console.log('Data:', data);  // Debug : Afficher le JSON complet dans la console
 
-      if (!trait) {
-        alert("Aucun trait trouvé pour l'ID " + id);
-        return;
-      }
-
-      const name = trait.displayProperties?.name || "Nom inconnu";
-      const description = trait.displayProperties?.description || "Pas de description.";
-      const hasIcon = trait.displayProperties?.hasIcon;
-      const iconPath = trait.displayProperties?.icon;
-
-      document.getElementById("trait-name").textContent = name;
-      document.getElementById("trait-description").textContent = description;
-
-      const iconURL = hasIcon && iconPath
-        ? "https://www.bungie.net" + iconPath
-        : "https://via.placeholder.com/128?text=Aucune+icone";
-
-      document.getElementById("trait-icon").src = iconURL;
+    const trait = data[id];
+    if (!trait) {
+      alert("Aucun trait trouvé pour l'ID " + id);
+      return;
     }
 
-    loadTrait();
+    const name = trait.displayProperties?.name || "Nom inconnu";
+    const description = trait.displayProperties?.description || "Pas de description.";
+    const hasIcon = trait.displayProperties?.hasIcon;
+    const iconPath = trait.displayProperties?.icon;
+
+    console.log('Trait:', trait); // Debug : Afficher les données du trait sélectionné
+
+    document.getElementById("trait-name").textContent = name;
+    document.getElementById("trait-description").textContent = description;
+
+    const iconURL = hasIcon && iconPath
+      ? "https://www.bungie.net" + iconPath
+      : "https://via.placeholder.com/128?text=Aucune+icone";
+
+    document.getElementById("trait-icon").src = iconURL;
+
+  } catch (error) {
+    console.error("Erreur de chargement du JSON :", error);
+  }
+}
+
+loadTrait();
   </script>
 </body>
 </html>
