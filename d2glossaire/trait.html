@@ -82,17 +82,26 @@
       margin-bottom: 0.5rem;
     }
 
-    .popup {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0,0,0,0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
+	.popup {
+	  position: fixed;
+	  top: 0; left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  background-color: rgba(0,0,0,0.7);
+	  display: none; /* par défaut, cachée */
+	  align-items: center;
+	  justify-content: center;
+	  z-index: 1000;
+	  opacity: 0;
+	  transform: scale(0.9);
+	  transition: opacity 0.3s ease, transform 0.3s ease;
+	}
+	
+	.popup.show {
+	  display: flex;
+	  opacity: 1;
+	  transform: scale(1);
+	}
 
     .popup-content {
       background-color: #1f1f1f;
@@ -135,6 +144,10 @@
     .close-btn {
       right: 0.5rem;
     }
+	
+	body.popup-open {
+	  overflow: hidden;
+	}
 
     .share-btn {
       left: 0.5rem;
@@ -223,24 +236,35 @@
       renderTraits(filtered);
     });
 
-    function openPopup(id) {
-      const trait = traitData[id];
-      const props = trait.displayProperties;
-      document.getElementById('popup-icon').src = "https://www.bungie.net" + props.icon;
-      document.getElementById('popup-name').textContent = props.name;
-      document.getElementById('popup-description').textContent = props.description;
-      document.getElementById('popup').style.display = 'flex';
-      const url = new URL(window.location);
-      url.searchParams.set('id', id);
-      history.replaceState(null, '', url);
-    }
+	function openPopup(id) {
+	  const trait = traitData[id];
+	  const props = trait.displayProperties;
+	  document.getElementById('popup-icon').src = "https://www.bungie.net" + props.icon;
+	  document.getElementById('popup-name').textContent = props.name;
+	  document.getElementById('popup-description').textContent = props.description;
+	  
+	  // Ajoute la classe 'show' pour lancer l'animation
+	  document.getElementById('popup').classList.add('show');
+	  document.body.classList.add('popup-open'); // Empêche le scroll
 
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-      const url = new URL(window.location);
-      url.searchParams.delete('id');
-      history.replaceState(null, '', url);
-    }
+	  const url = new URL(window.location);
+	  url.searchParams.set('id', id);
+	  history.replaceState(null, '', url);
+	  
+	  document.getElementById('popup').onclick = (e) => {
+		if (e.target.id === 'popup') closePopup();
+	  };
+	}
+
+	function closePopup() {
+	  // Enlève la classe 'show' pour lancer l'animation de fermeture
+	  document.getElementById('popup').classList.remove('show');
+	  document.body.classList.remove('popup-open'); // Réautorise le scroll
+
+	  const url = new URL(window.location);
+	  url.searchParams.delete('id');
+	  history.replaceState(null, '', url);
+	}
 
     function sharePopup() {
       const url = window.location.href;
