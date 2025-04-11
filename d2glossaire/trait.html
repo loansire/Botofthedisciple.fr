@@ -165,14 +165,27 @@
     let traitData = {};
     let filteredTraits = [];
 
+    const excludedIds = [
+      "370766376", "500105683", "520867389",
+	  "1434215347", "2230116619", "2356777566",
+	  "2387836362", "2878306895", "3671004794", 
+	  "4105527943", "4263853822"// Ajoute ici les IDs à exclure
+    ];
+
     async function loadTraits() {
       try {
         const res = await fetch('trait_definitions.json');
         const data = await res.json();
         traitData = data;
-        filteredTraits = Object.entries(data).filter(([_, trait]) => {
+        filteredTraits = Object.entries(data).filter(([id, trait]) => {
           const props = trait.displayProperties;
-          return props?.name && props?.description && props?.hasIcon && props?.icon;
+          return (
+            props?.name &&
+            props?.description &&
+            props?.hasIcon &&
+            props?.icon &&
+            !excludedIds.includes(id)
+          );
         });
         renderTraits(filteredTraits);
 
