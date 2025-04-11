@@ -102,7 +102,6 @@
 	  opacity: 1;
 	  transform: scale(1);
 	}
-
     .popup-content {
       background-color: #1f1f1f;
       border-radius: 12px;
@@ -166,7 +165,7 @@
 
   <div class="grid" id="trait-list"></div>
 
-  <div class="popup" id="popup" style="display: none;">
+  <div class="popup" id="popup">
     <div class="popup-content">
       <button class="close-btn" onclick="closePopup()">&times;</button>
       <button class="share-btn" onclick="sharePopup()">Partager</button>
@@ -243,21 +242,21 @@
 	  document.getElementById('popup-name').textContent = props.name;
 	  document.getElementById('popup-description').textContent = props.description;
 	  
-	  // Ajoute la classe 'show' pour lancer l'animation
+	  // Ajoute la classe 'show' pour afficher la popup
 	  document.getElementById('popup').classList.add('show');
 	  document.body.classList.add('popup-open'); // Empêche le scroll
 
 	  const url = new URL(window.location);
 	  url.searchParams.set('id', id);
 	  history.replaceState(null, '', url);
-	  
+
 	  document.getElementById('popup').onclick = (e) => {
-		if (e.target.id === 'popup') closePopup();
+		if (e.target.id === 'popup') closePopup(); // Ferme la popup en cliquant en dehors
 	  };
 	}
 
 	function closePopup() {
-	  // Enlève la classe 'show' pour lancer l'animation de fermeture
+	  // Retire la classe 'show' pour masquer la popup
 	  document.getElementById('popup').classList.remove('show');
 	  document.body.classList.remove('popup-open'); // Réautorise le scroll
 
