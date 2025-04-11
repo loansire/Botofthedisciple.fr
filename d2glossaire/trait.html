@@ -3,128 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destiny 2 - Trait</title>
+  <title>D2Glossaire - Traits</title>
   <style>
     body {
       font-family: sans-serif;
-      padding: 2rem;
       background-color: #121212;
       color: #eee;
+      margin: 0;
+      padding: 1rem;
     }
-    .card {
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .trait-card {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .trait-card:hover {
+      transform: scale(1.05);
+    }
+
+    .trait-card img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.7);
       display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
       background-color: #1f1f1f;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      overflow: hidden;
-      max-width: 600px;
-      margin: 0 auto;
-      flex-direction: row;
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      position: relative;
     }
-    .icon {
-      width: 80px;
+
+    .popup img {
+      width: 96px;
+      height: 96px;
       object-fit: contain;
-      background-color: #2a2a2a;
-      padding: 0.5rem;
+      margin-bottom: 1rem;
     }
-    .content {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex: 1;
-    }
-    .name {
+
+    .popup .name {
       font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
-    .description {
+
+    .popup .description {
       font-size: 1rem;
       opacity: 0.9;
     }
 
-    /* Mobile responsive */
-    @media (max-width: 600px) {
-      .card {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-      }
+    .close-btn, .share-btn {
+      position: absolute;
+      top: 0.5rem;
+      background: none;
+      border: none;
+      color: #eee;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
 
-      .icon {
-        width: 120px;
-        height: 120px;
-      }
+    .close-btn {
+      right: 0.5rem;
+    }
 
-      .name {
-        font-size: 1.2rem;
-      }
-
-      .description {
-        font-size: 0.9rem;
-      }
+    .share-btn {
+      left: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <div id="trait-card" class="card">
-    <img id="trait-icon" class="icon" src="" alt="Icone">
-    <div class="content">
-      <div id="trait-name" class="name"></div>
-      <div id="trait-description" class="description"></div>
+  <h1>D2Glossaire - Traits</h1>
+  <div class="grid" id="trait-list"></div>
+
+  <div class="popup" id="popup" style="display: none;">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">&times;</button>
+      <button class="share-btn" onclick="sharePopup()">Partager</button>
+      <img id="popup-icon" src="" alt="Icon">
+      <div id="popup-name" class="name"></div>
+      <div id="popup-description" class="description"></div>
     </div>
   </div>
 
   <script>
-    async function loadTrait() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const id = urlParams.get('id');
+    let traitData = {};
 
-      if (!id) {
-        alert("Aucun ID spécifié dans l'URL.");
-        return;
-      }
-
+    async function loadTraits() {
       try {
-        const response = await fetch('trait_definitions.json');
-        const data = await response.json();
+        const res = await fetch('trait_definitions.json');
+        const data = await res.json();
+        traitData = data;
 
-        const trait = data[id];
-        if (!trait) {
-          alert("Aucun trait trouvé pour l'ID " + id);
-          return;
+        const list = document.getElementById('trait-list');
+
+        for (const id in data) {
+          const trait = data[id];
+          const props = trait.displayProperties;
+          if (!props?.name || !props?.description || !props?.hasIcon || !props?.icon) continue;
+
+          const card = document.createElement('div');
+          card.className = 'trait-card';
+          card.innerHTML = `
+            <img src="https://www.bungie.net${props.icon}" alt="${props.name}" />
+            <div>${props.name}</div>
+          `;
+          card.onclick = () => openPopup(id);
+
+          list.appendChild(card);
         }
 
-        const name = trait.displayProperties?.name || "Nom inconnu";
-        const description = trait.displayProperties?.description || "Pas de description.";
-        const hasIcon = trait.displayProperties?.hasIcon;
-        const iconPath = trait.displayProperties?.icon;
+        // Check URL param for popup
+        const urlParams = new URLSearchParams(window.location.search);
+        const traitId = urlParams.get('id');
+        if (traitId && data[traitId]) {
+          openPopup(traitId);
+        }
 
-        document.getElementById("trait-name").textContent = name;
-        document.getElementById("trait-description").textContent = description;
-
-        const iconURL = hasIcon && iconPath
-          ? "https://www.bungie.net" + iconPath
-          : "https://via.placeholder.com/128?text=Aucune+icone";
-
-        document.getElementById("trait-icon").src = iconURL;
-
-        // Changer le titre de l'onglet
-        document.title = name;
-
-        // Changer l'image de l'onglet
-        const favicon = document.createElement('link');
-        favicon.rel = 'icon';
-        favicon.href = iconURL;
-        document.head.appendChild(favicon);
-
-      } catch (error) {
-        console.error("Erreur de chargement du JSON :", error);
+      } catch (err) {
+        console.error("Erreur lors du chargement :", err);
       }
     }
 
-    loadTrait();
+    function openPopup(id) {
+      const trait = traitData[id];
+      const props = trait.displayProperties;
+      document.getElementById('popup-icon').src = "https://www.bungie.net" + props.icon;
+      document.getElementById('popup-name').textContent = props.name;
+      document.getElementById('popup-description').textContent = props.description;
+      document.getElementById('popup').style.display = 'flex';
+
+      // Change URL
+      const url = new URL(window.location);
+      url.searchParams.set('id', id);
+      history.replaceState(null, '', url);
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      const url = new URL(window.location);
+      url.searchParams.delete('id');
+      history.replaceState(null, '', url);
+    }
+
+    function sharePopup() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url);
+      alert("Lien copié dans le presse-papier :\n" + url);
+    }
+
+    loadTraits();
   </script>
 </body>
 </html>
