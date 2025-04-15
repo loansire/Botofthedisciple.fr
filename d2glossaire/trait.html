@@ -88,7 +88,7 @@
 	  width: 100vw;
 	  height: 100vh;
 	  background-color: rgba(0,0,0,0.7);
-	  display: none; /* par défaut, cachée */
+	  display: none;
 	  align-items: center;
 	  justify-content: center;
 	  z-index: 1000;
@@ -188,7 +188,7 @@
 
     async function loadTraits() {
       try {
-        const res = await fetch('trait_definitions.json');
+        const res = await fetch('json/trait_definitions.json');
         const data = await res.json();
         traitData = data;
         filteredTraits = Object.entries(data).filter(([id, trait]) => {
