@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BotoftheDisciple</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/discord.svg">
+  <style>
+    :root {
+      --main-bg: #1a0d0d;
+      --primary: #7e1e2b;
+      --primary-dark: #5c161f;
+      --text-light: #e5e5e5;
+    }
+
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('destiny-vow-of-the-disciple-wallpapers.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px) brightness(0.4);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col" style="background-color: var(--main-bg); color: var(--text-light);">
+  <div class="background-image"></div>
+
+  <!-- Navbar -->
+  <header style="background-color: var(--primary-dark);" class="shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="Minirulk.svg" alt="Logo BotoftheDisciple" class="w-14 h-14">
+        <h1 class="text-2xl font-bold">BotoftheDisciple</h1>
+      </div>
+      <nav class="space-x-6">
+        <a href="#" class="hover:text-red-400">Accueil</a>
+        <a href="/D2glossary" class="hover:text-red-400">D2glossary</a>
+        <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1270022221783498844&permissions=1689934340029504&scope=bot%20applications.commands" class="bg-red-800 px-4 py-2 rounded hover:bg-red-700 transition">Inviter le bot</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-6">
+    <h2 class="text-4xl font-bold mb-4">Le compagnon Destiny 2 ultime en français sur Discord</h2>
+    <p class="text-lg max-w-2xl mx-auto text-gray-300 mb-8">
+      BotoftheDisciple vous informe sur les rotations d'activités de Destiny 2, vous notifie des actualités officielles Bungie (patch notes, articles), et vous alerte des maintenances de serveurs.
+    </p>
+    <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1270022221783498844&permissions=1689934340029504&scope=bot%20applications.commands" class="inline-block bg-red-800 text-white px-6 py-3 rounded text-lg hover:bg-red-700 transition">Inviter sur votre serveur</a>
+  </section>
+
+  <!-- Features -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 py-16">
+    <div class="bg-red-900 bg-opacity-80 p-6 rounded-lg shadow-xl border border-red-700">
+      <h3 class="text-xl font-semibold mb-2">Rotations d'activités</h3>
+      <p class="text-gray-300">Consultez les activités de la semaine : Nuit noire, Raid, Donjon, Mission exotique, Secteur oublié et bien plus.</p>
+    </div>
+    <div class="bg-red-900 bg-opacity-80 p-6 rounded-lg shadow-xl border border-red-700">
+      <h3 class="text-xl font-semibold mb-2">Actus & Patch Notes</h3>
+      <p class="text-gray-300">Soyez notifié dès la sortie des articles officiels et des notes de mise à jour publiées par Bungie.</p>
+    </div>
+    <div class="bg-red-900 bg-opacity-80 p-6 rounded-lg shadow-xl border border-red-700">
+      <h3 class="text-xl font-semibold mb-2">Alertes maintenance</h3>
+      <p class="text-gray-300">Ne soyez plus pris au dépourvu : recevez les alertes en cas de maintenance des serveurs.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color: rgba(55, 0, 0, 0.7);" class="py-6 mt-auto backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 text-center text-gray-400 text-sm">
+      <p>2025 - BotoftheDisciple. Developpé par Loan#5197 et Sisimonis.</p>
+      <!--<p><a href="#cgu" class="underline hover:text-white">Conditions Générales d'Utilisation</a></p>-->
+      <p>Site en construction. Bot accessible en version Alpha uniquement.</p>
+    </div>
+  </footer>
+</body>
+</html>
