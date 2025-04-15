@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D2Glossaire - Dégats</title>
+  <title>D2Glossaire - Champions</title>
   <style>
     body {
       font-family: sans-serif;
@@ -156,7 +156,7 @@
 <body>
   <header>
     <a class="back-button" href="index">&larr; Retour</a>
-    <h1>D2Glossaire - Dégats</h1>
+    <h1>D2Glossaire - Champions</h1>
   </header>
 
   <div class="search-box">
@@ -185,7 +185,7 @@
 
     async function loadTraits() {
       try {
-        const res = await fetch('damagetype_definitions.json');
+        const res = await fetch('breaker_definitions.json');
         const data = await res.json();
         traitData = data;
         filteredTraits = Object.entries(data).filter(([id, trait]) => {
