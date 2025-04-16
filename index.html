@@ -26,6 +26,19 @@
       filter: blur(5px) brightness(0.4);
       z-index: -1;
     }
+
+    #menu-toggle.open .bar:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+
+    #menu-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menu-toggle.open .bar:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
   </style>
 </head>
 <body class="min-h-screen flex flex-col" style="background-color: var(--main-bg); color: var(--text-light);">
@@ -39,10 +52,12 @@
       <h1 class="text-2xl font-bold">BotoftheDisciple</h1>
     </div>
 
-    <!-- Bouton Hamburger Mobile -->
-    <button id="menu-toggle" class="md:hidden text-white text-4xl focus:outline-none">
-      &#9776;
-    </button>
+    <!-- Hamburger avec morphing -->
+    <div id="menu-toggle" class="md:hidden flex flex-col justify-between w-8 h-6 cursor-pointer z-50">
+      <span class="bar w-full h-1 bg-white rounded transition-transform duration-300 ease-in-out"></span>
+      <span class="bar w-full h-1 bg-white rounded transition-opacity duration-300 ease-in-out"></span>
+      <span class="bar w-full h-1 bg-white rounded transition-transform duration-300 ease-in-out"></span>
+    </div>
 
     <!-- Menu Desktop -->
     <nav id="menu" class="hidden md:flex items-center space-x-6">
@@ -99,6 +114,7 @@
 
     toggleBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
+      toggleBtn.classList.toggle("open");
     });
   </script>
 </body>
