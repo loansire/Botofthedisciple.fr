@@ -10,13 +10,13 @@
   <meta name="apple-mobile-web-app-title" content="D2Glossary" />
   <link rel="manifest" href="assets/src/ico/site.webmanifest" />
   <link rel="stylesheet" href="assets/css/popupitem.css">
+  <link rel="stylesheet" href="assets/css/banniere.css">
   <link rel="stylesheet" href="styles.css">
   <title>D2Glossaire - Modificateurs</title>
 </head>
 <body>
   <header>
-    <a class="back-button" href="index">&larr; Retour</a>
-    <h1>D2Glossaire - Modificateurs</h1>
+    <div id="banniere-container"></div>
   </header>
 
   <div class="search-box">
@@ -34,7 +34,14 @@
       document.getElementById('popupitem-container').innerHTML = html;
     }
 
+    async function loadBanniere() {
+      const res = await fetch('assets/html/banniere.html');
+      const html = await res.text();
+      document.getElementById('banniere-container').innerHTML = html;
+    }
+
     loadPopupItem();
+    loadBanniere();
   </script>
 
   <script>
