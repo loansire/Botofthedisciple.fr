@@ -16,8 +16,7 @@
 </head>
 <body>
   <header>
-    <a class="back-button" href="index">&larr; Retour</a>
-    <h1>D2Glossaire - Dégats</h1>
+    <div id="banniere-container"></div>
   </header>
 
   <div class="search-box">
@@ -35,7 +34,14 @@
       document.getElementById('popupitem-container').innerHTML = html;
     }
 
+    async function loadBanniere() {
+      const res = await fetch('assets/html/banniere.html');
+      const html = await res.text();
+      document.getElementById('banniere-container').innerHTML = html;
+    }
+
     loadPopupItem();
+    loadBanniere();
   </script>
 
   <script>
