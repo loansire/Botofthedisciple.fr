@@ -1,0 +1,94 @@
+body {
+  font-family: sans-serif;
+  background-color: #121212;
+  color: #eee;
+  margin: 0;
+  padding: 1rem;
+}
+
+header {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #eee;
+  text-decoration: none;
+  background-color: #2a2a2a;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.search-box {
+  text-align: center;
+  margin-bottom: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  padding: 0.5rem;
+  width: 90%;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 1rem auto;
+}
+
+.trait-card {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.trait-card:hover {
+  transform: scale(1.05);
+}
+
+.trait-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.close-btn, .share-btn {
+  position: absolute;
+  top: 0.5rem;
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  right: 0.5rem;
+}
+
+.share-btn {
+  left: 0.5rem;
+}
