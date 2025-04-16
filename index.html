@@ -31,19 +31,33 @@
 <body class="min-h-screen flex flex-col" style="background-color: var(--main-bg); color: var(--text-light);">
   <div class="background-image"></div>
 
-  <!-- Navbar -->
-  <header style="background-color: var(--primary-dark);" class="shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <img src="Minirulk.svg" alt="Logo BotoftheDisciple" class="w-14 h-14">
-        <h1 class="text-2xl font-bold">BotoftheDisciple</h1>
-      </div>
-      <nav class="space-x-6">
-        <a href="/d2glossaire" class="hover:text-red-400">D2glossaire</a>
-        <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1270022221783498844&permissions=1689934340029504&scope=bot%20applications.commands" class="bg-red-800 px-4 py-2 rounded hover:bg-red-700 transition">Inviter le bot</a>
-      </nav>
+<!-- Navbar responsive -->
+<header style="background-color: var(--primary-dark);" class="shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <img src="Minirulk.svg" alt="Logo BotoftheDisciple" class="w-14 h-14">
+      <h1 class="text-2xl font-bold">BotoftheDisciple</h1>
     </div>
-  </header>
+
+    <!-- Bouton Hamburger Mobile -->
+    <button id="menu-toggle" class="md:hidden text-white text-4xl focus:outline-none">
+      &#9776;
+    </button>
+
+    <!-- Menu Desktop -->
+    <nav id="menu" class="hidden md:flex items-center space-x-6">
+
+      <a href="/d2glossaire" class="hover:text-red-400">D2glossaire</a>
+      <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1270022221783498844&permissions=1689934340029504&scope=bot%20applications.commands" class="bg-red-800 px-4 py-2 rounded hover:bg-red-700 transition">Inviter le bot</a>
+    </nav>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+    <a href="/d2glossaire" class="block text-white py-2 hover:text-red-400">D2glossaire</a>
+    <a target="_blank" href="https://discord.com/oauth2/authorize?client_id=1270022221783498844&permissions=1689934340029504&scope=bot%20applications.commands" class="block bg-red-800 text-white px-4 py-2 rounded hover:bg-red-700 transition mt-2">Inviter le bot</a>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="text-center py-20 px-6">
@@ -78,5 +92,14 @@
       <p>Site réalisé avec l'utilisation de chatGPT - en construction. Bot accessible en version Alpha uniquement.</p>
     </div>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
 </body>
 </html>
