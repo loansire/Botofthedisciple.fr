@@ -43,7 +43,7 @@
     <div class="container" id="cards-container"></div>
 
     <script>
-        const JSON_PATH = 'data/clarity.json'; // <<< Chemin absolu ou relatif vers ton fichier .json
+        const JSON_PATH = 'data/clarity.json';
 
         async function loadDescriptions() {
             try {
@@ -61,10 +61,16 @@
 
         function renderCards(data) {
             const container = document.getElementById('cards-container');
-            container.innerHTML = ''; // vide au cas où
+            container.innerHTML = '';
 
             for (const id in data) {
                 const item = data[id];
+
+                // Vérifie qu'on a bien name, type, et descriptions.en
+                if (!item.name || !item.type || !item.descriptions || !item.descriptions.en) {
+                    continue;
+                }
+
                 const card = document.createElement('div');
                 card.className = 'card';
 
@@ -72,19 +78,27 @@
                 title.textContent = item.name;
                 card.appendChild(title);
 
+                const type = document.createElement('h3');
+                type.textContent = item.type;
+                card.appendChild(type);
+
                 item.descriptions.en.forEach(section => {
                     if (section.linesContent) {
                         const p = document.createElement('p');
                         section.linesContent.forEach(line => {
                             let element;
+
                             if (line.link) {
                                 element = document.createElement('a');
                                 element.href = line.link;
-                                element.textContent = line.text;
                                 element.target = '_blank';
-                            } else {
+                                element.textContent = line.text || "";
+                            } else if (line.text) {
                                 element = document.createElement('span');
                                 element.textContent = line.text;
+                            } else {
+                                element = document.createElement('span');
+                                element.textContent = "";
                             }
 
                             if (line.classNames) {
@@ -94,7 +108,7 @@
                             }
 
                             p.appendChild(element);
-                            p.append(' '); // espace après chaque fragment
+                            p.append(' ');
                         });
                         card.appendChild(p);
                     } else if (section.classNames && section.classNames.includes('spacer')) {
@@ -108,7 +122,6 @@
             }
         }
 
-        // Démarre le chargement au démarrage de la page
         loadDescriptions();
     </script>
 </body>
