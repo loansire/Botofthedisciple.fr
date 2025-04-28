@@ -1,26 +1,137 @@
-/* Exemple des styles spéciaux */
+/* Classes générales */
+
+/* Classe Heavy (avec une icône d'un poids) */
+.heavy::before {
+    content: "⚖️ "; /* Icône de poids */
+    font-weight: bold;
+    color: #f00; /* Rouge */
+}
+
+/* Classe Primary (avec une icône de l'élément primaire) */
+.primary::before {
+    content: "⭐ ";
+    font-weight: bold;
+    color: #007bff; /* Bleu primaire */
+}
+
+/* Classe Special (avec un symbole spécial) */
+.special::before {
+    content: "✨ ";
+    font-style: italic;
+    color: #ff6347; /* Tomate */
+}
+
+/* Classe Green (avec une icône verte) */
+.green {
+    color: #28a745; /* Vert */
+}
+
+/* Classe Yellow (avec une icône jaune) */
+.yellow {
+    color: #ffc107; /* Jaune */
+}
+
+/* Classe Void (avec un symbole de vide) */
+.void::before {
+    content: "🌑 ";
+    color: #6f42c1; /* Violet */
+}
+
+/* Classe PVE (avec une icône PVE) */
 .pve::before {
-    content: "[PVE] ";
-    /*font-family: 'MyGameIcons', Arial, sans-serif;*/
-    color: green;
+    content: "🎮 ";
+    color: Blue;
     font-weight: bold;
 }
 
+/* Classe PVP (avec une icône PVP) */
 .pvp::before {
-    content: "[PVP] ";
-    /*font-family: 'MyGameIcons', Arial, sans-serif;*/
+    content: "⚔️ ";
     color: red;
     font-weight: bold;
 }
 
-.enhancedArrow::before {
-    content: "🡅 ";
-    color: orange;
-    font-size: 1.2em;
-    margin-right: 4px;
+/* Classe Title (avec une icône de titre) */
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #343a40;
+    text-transform: uppercase;
 }
 
-.link a {
-    color: blue;
-    text-decoration: underline;
+/* Classe Enhanced Arrow (flèche vers le haut) */
+.enhancedArrow {
+    color: orange;
+    font-weight: bold;
+}
+
+/* Classe Solar (avec une icône de soleil) */
+.solar::before {
+    content: "☀️ ";
+    color: #f39c12; /* Orange solaire */
+}
+
+/* Classe Arc (avec une icône d'éclair) */
+.arc::before {
+    content: "⚡ ";
+    color: #3498db; /* Bleu arc */
+}
+
+/* Classe Stasis (avec une icône de glace) */
+.stasis::before {
+    content: "❄️ ";
+    color: #2980b9; /* Bleu glacial */
+}
+
+/* Classe Strand (avec une icône de branche) */
+.strand::before {
+    content: "🌿 ";
+    color: #16a085; /* Vert strand */
+}
+
+/* Classe Barrier (avec un symbole de protection) */
+.barrier::before {
+    content: "🛡️ ";
+    color: white;
+}
+
+/* Classe Unstoppable (avec un symbole de bras) */
+.unstoppable::before {
+    content: "💪 ";
+    color: white;
+}
+
+/* Classe Overload (avec un symbole de surcharge) */
+.overload::before {
+    content: "⚡ ";
+    color: white;
+}
+
+/* Classe Hunter (avec un symbole de chasseur) */
+.hunter::before {
+    content: "🏹 ";
+    background-color: #f39c12; /* Orange */
+    color: black;
+    font-weight: bold;
+}
+
+/* Classe Titan (avec un symbole de titan) */
+.titan::before {
+    content: "🛡️ ";
+    background-color: #3498db; /* Bleu */
+    color: white;
+    font-weight: bold;
+}
+
+/* Classe Warlock (avec un symbole de mage) */
+.warlock::before {
+    content: "🔮 ";
+    background-color: #9b59b6; /* Violet */
+    color: white;
+    font-weight: bold;
+}
+
+/* Classe Bold (mettre le texte en gras) */
+.bold {
+    font-weight: bold;
 }
