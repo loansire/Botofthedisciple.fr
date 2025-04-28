@@ -69,27 +69,27 @@
 </div>
 
 <script>
-  const JSON_URL = 'https://www.bungie.net//common/destiny2_content/json/fr/DestinyInventoryItemDefinition-c6fc17f9-7b65-454f-b215-0627f9e4b5b0.json'; // Chemin vers ton fichier JSON
+  const JSON_URL = 'https://www.bungie.net//common/destiny2_content/json/fr/DestinyInventoryItemDefinition-c6fc17f9-7b65-454f-b215-0627f9e4b5b0.json';
 
   document.getElementById('searchButton').addEventListener('click', async () => {
     const searchQuery = document.getElementById('searchBar').value.trim().toLowerCase();
     if (!searchQuery) return;
 
     try {
-      // Charger dynamiquement le fichier JSON au moment de la recherche
+      // Charger dynamiquement le fichier JSON depuis Bungie.net
       const response = await fetch(JSON_URL);
       const data = await response.json();
 
-      // La structure est un objet avec des IDs comme clés, donc il faut parcourir les valeurs
+      // Attention, la structure est très grosse (beaucoup d'objets) !
       const items = Object.values(data);
 
-      // Filtrer les items par nom
       const results = items.filter(item =>
-        item.displayProperties && item.displayProperties.name &&
+        item.displayProperties &&
+        item.displayProperties.name &&
+        item.displayProperties.icon &&
         item.displayProperties.name.toLowerCase().includes(searchQuery)
       );
 
-      // Afficher les résultats
       const resultsContainer = document.getElementById('results');
       resultsContainer.innerHTML = ''; // Vider les anciens résultats
 
@@ -104,20 +104,18 @@
         imgElement.alt = item.displayProperties.name;
         imgElement.classList.add('result-item');
 
-        // Clic = copier lien de l'image dans le presse-papier
         imgElement.addEventListener('click', () => {
           navigator.clipboard.writeText(imgElement.src)
             .then(() => console.log('Lien copié:', imgElement.src))
-            .catch(err => console.error('Erreur lors de la copie:', err));
+            .catch(err => console.error('Erreur de copie:', err));
         });
 
         resultsContainer.appendChild(imgElement);
       });
 
     } catch (error) {
-      console.error('Erreur de chargement du fichier JSON :', error);
-      const resultsContainer = document.getElementById('results');
-      resultsContainer.innerHTML = '<p>Erreur lors du chargement des données.</p>';
+      console.error('Erreur de chargement du JSON :', error);
+      document.getElementById('results').innerHTML = '<p>Erreur lors du chargement des données.</p>';
     }
   });
 </script>
