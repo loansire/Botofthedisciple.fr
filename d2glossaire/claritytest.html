@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/d2elementstyles.css">
     <title>Descriptions Viewer</title>
     <style>
         body {
@@ -42,7 +43,7 @@
     <div class="container" id="cards-container"></div>
 
     <script>
-        const JSON_PATH = '/data/clarity.json'; // <<< Chemin absolu ou relatif vers ton fichier .json
+        const JSON_PATH = 'data/clarity.json'; // <<< Chemin absolu ou relatif vers ton fichier .json
 
         async function loadDescriptions() {
             try {

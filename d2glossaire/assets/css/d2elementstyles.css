@@ -1,0 +1,26 @@
+/* Exemple des styles spéciaux */
+.pve::before {
+    content: "[PVE] ";
+    /*font-family: 'MyGameIcons', Arial, sans-serif;*/
+    color: green;
+    font-weight: bold;
+}
+
+.pvp::before {
+    content: "[PVP] ";
+    /*font-family: 'MyGameIcons', Arial, sans-serif;*/
+    color: red;
+    font-weight: bold;
+}
+
+.enhancedArrow::before {
+    content: "🡅 ";
+    color: orange;
+    font-size: 1.2em;
+    margin-right: 4px;
+}
+
+.link a {
+    color: blue;
+    text-decoration: underline;
+}
