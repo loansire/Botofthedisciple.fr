@@ -1,5 +1,6 @@
-/* Déclaration des variables de couleurs */
+/* Déclaration des variables de couleurs et polices */
 :root {
+    /* Couleurs principales */
     --void-color: #B283CC;
     --solar-color: #F16F27;
     --arc-color: #7AECF3;
@@ -11,6 +12,11 @@
     --exotic-label-color: #B09C4F;
     --legendary-label-color: #644D71;
     --mod-fg-color: #0AF3F3;
+    --yellow-color: #ffc107;
+
+    /* Polices */
+    --font-class-ammo-activity: 'Destiny2Class-ammo', sans-serif;
+    --font-d2symbols: 'Destiny2Symbols', sans-serif;
 }
 
 /* Police personnalisée */
@@ -24,115 +30,123 @@
     src: url('../fonts/destiny_symbols_common.otf') format('truetype');
 }
 
+/* Font-family par défaut pour Destiny2Class-ammo */
+.primary::before,
+.special::before,
+.heavy::before,
+.hunter::before,
+.titan::before,
+.warlock::before,
+.pve::before,
+.pvp::before {
+    font-family: var(--font-class-ammo-activity);
+}
+
+/* Font-family par défaut pour Destiny2Symbols */
+.void::before,
+.solar::before,
+.arc::before,
+.stasis::before,
+.strand::before,
+.barrier::before,
+.unstoppable::before,
+.overload::before {
+    font-family: var(--font-d2symbols);
+}
+
 /* Classe Primary */
 .primary::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
     content: '\0045'; /* Icône primaire */
     color: var(--primary-color);
 }
 
 /* Classe Special */
 .special::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
     content: '\0044'; /* Icône spéciale */
     color: var(--special-color);
 }
 
 /* Classe Heavy */
 .heavy::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
-    content: '\0046';
+    content: '\0046'; /* Icône heavy */
     color: var(--heavy-color);
 }
 
-/* Classe Void (icône Void) */
+/* Classe Void */
 .void::before {
-    content: ''; /* Icône void */
-    font-family: 'Destiny2Symbols', sans-serif;
+    content: '\E144'; /* Unicode corrigé */
     color: var(--void-color);
 }
 
 /* Classe PVE */
 .pve::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
     content: "🎮";
     color: blue;
 }
 
 /* Classe PVP */
 .pvp::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
     content: "⚔️";
     color: red;
 }
 
 /* Classe Solar */
 .solar::before {
-    font-family: 'Destiny2Symbols', sans-serif;
-    content: "";
+    content: '\E140'; /* Unicode pour Solar */
     color: var(--solar-color);
 }
 
 /* Classe Arc */
 .arc::before {
-    font-family: 'Destiny2Symbols', sans-serif;
-    content: "";
+    content: '\E143'; /* Unicode pour Arc */
     color: var(--arc-color);
 }
 
 /* Classe Stasis */
 .stasis::before {
-    font-family: 'Destiny2Symbols', sans-serif;
-    content: "";
+    content: '\E0F9'; /* Unicode pour Stasis */
     color: var(--stasis-color);
 }
 
 /* Classe Strand */
 .strand::before {
-    font-family: 'Destiny2Symbols', sans-serif;
-    content: "";
+    content: '\EC0E'; /* Unicode pour Strand */
     color: var(--strand-color);
 }
 
 /* Classe Barrier */
 .barrier::before {
-    font-family: 'Destiny2Symbols', sans-serif;
-    content: "️";
+    content: '\E060'; /* Unicode pour Barrier */
     color: var(--mod-fg-color);
 }
 
 /* Classe Unstoppable */
 .unstoppable::before {
-    font-family: 'Destiny2Symbols', sans-serif;
-    content: "";
+    content: '\E062'; /* Unicode pour Unstoppable */
     color: var(--mod-fg-color);
 }
 
 /* Classe Overload */
 .overload::before {
-    font-family: 'Destiny2Symbols', sans-serif;
-    content: "";
+    content: '\E061'; /* Unicode pour Overload */
     color: var(--mod-fg-color);
 }
 
 /* Classe Hunter */
 .hunter::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
-    content: "\0041";
+    content: '\0041'; /* Hunter */
     color: black;
 }
 
 /* Classe Titan */
 .titan::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
-    content: "\0042";
+    content: '\0042'; /* Titan */
     color: black;
 }
 
 /* Classe Warlock */
 .warlock::before {
-    font-family: 'Destiny2Class-ammo', sans-serif;
-    content: "\0043";
+    content: '\0043'; /* Warlock */
     color: black;
 }
 
@@ -140,7 +154,6 @@
 .bold {
     font-weight: bold;
 }
-
 
 /* Classe Title */
 .title {
@@ -157,7 +170,7 @@
     color: var(--special-color);
 }
 
-/* yellow Green */
+/* Classe Yellow */
 .yellow {
-    color: var(--exotic-label-color);
+    color: var(--yellow-color);
 }

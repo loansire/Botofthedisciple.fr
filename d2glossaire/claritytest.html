@@ -3,48 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/d2elementstyles.css">
-    <title>TestClarity</title>
+    <title>TestClarity - Dark Mode</title>
     <style>
+        /* Base */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #121212; /* Fond sombre */
+            color: #e0e0e0; /* Texte clair */
             margin: 0;
             padding: 20px;
         }
 
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        /* Container pour les cartes */
         .container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
         }
 
+        /* Style des cartes */
         .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #1e1e1e; /* Fond carte */
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             padding: 20px;
-            flex: 1 1 calc(33% - 20px); /* 3 par ligne */
+            flex: 1 1 calc(33% - 20px);
             max-width: calc(33% - 20px);
             box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+        }
+
+        /* Textes dans les cartes */
+        .card h2, .card h3 {
+            margin-top: 0;
+            color: #f0f0f0;
         }
 
         .card p {
             margin-bottom: 10px;
+            line-height: 1.5;
         }
 
+        /* Espacement */
         .spacer {
             margin: 10px 0;
         }
 
-        .link a {
-            color: blue;
+        /* Liens */
+        .link a, .card a {
+            color: #90caf9; /* Bleu clair */
             text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .card {
+                flex: 1 1 calc(50% - 20px); /* 2 par ligne */
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                flex: 1 1 100%; /* 1 par ligne */
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Liste des Community insight</h1>
+    <h1>Liste des Community Insight</h1>
     <div class="container" id="cards-container"></div>
 
     <script>
@@ -71,7 +112,6 @@
             for (const id in data) {
                 const item = data[id];
 
-                // Vérifie qu'on a bien name, type, et descriptions.en
                 if (!item.name || !item.type || !item.descriptions || !item.descriptions.en) {
                     continue;
                 }
