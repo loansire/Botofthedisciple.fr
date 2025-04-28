@@ -15,14 +15,14 @@
     --yellow-color: #ffc107;
 
     /* Polices */
-    --font-class-ammo-activity: 'Destiny2Class-ammo', sans-serif;
+    --font-class-ammo-activity: 'Destiny2Class-ammo-activity', sans-serif;
     --font-d2symbols: 'Destiny2Symbols', sans-serif;
 }
 
 /* Police personnalisée */
 @font-face {
-    font-family: 'Destiny2Class-ammo';
-    src: url('../fonts/Destiny2Class-ammo.ttf') format('truetype');
+    font-family: 'Destiny2Class-ammo-activity';
+    src: url('../fonts/Destiny2Class-ammo-activity.ttf') format('truetype');
 }
 
 @font-face {
@@ -56,20 +56,23 @@
 
 /* Classe Primary */
 .primary::before {
-    content: '\0045'; /* Icône primaire */
+    content: '\0044'; /* Icône primaire */
     color: var(--primary-color);
+    vertical-align: -3px;
 }
 
 /* Classe Special */
 .special::before {
-    content: '\0044'; /* Icône spéciale */
+    content: '\0045'; /* Icône spéciale */
     color: var(--special-color);
+    vertical-align: -3px;
 }
 
 /* Classe Heavy */
 .heavy::before {
     content: '\0046'; /* Icône heavy */
     color: var(--heavy-color);
+    vertical-align: -3px;
 }
 
 /* Classe Void */
@@ -80,15 +83,22 @@
 
 /* Classe PVE */
 .pve::before {
-    content: "🎮";
-    color: blue;
+    content: "\0048";
+    color: #6A8DFF; /* bleu clair plus vif */
+    text-shadow: 0 0 5px #6A8DFF;
+    vertical-align: -5px;
+    font-size: 20px;
 }
 
 /* Classe PVP */
 .pvp::before {
-    content: "⚔️";
-    color: red;
+    content: "\004a";
+    color: #FF5E57; /* rouge clair vif */
+    text-shadow: 0 0 5px #FF5E57;
+    vertical-align: -5px;
+    font-size: 20px;
 }
+
 
 /* Classe Solar */
 .solar::before {
@@ -104,50 +114,55 @@
 
 /* Classe Stasis */
 .stasis::before {
-    content: '\E0F9'; /* Unicode pour Stasis */
+    content: '\E139'; /* Unicode pour Stasis */
     color: var(--stasis-color);
 }
 
 /* Classe Strand */
 .strand::before {
-    content: '\EC0E'; /* Unicode pour Strand */
+    content: '\EF0E'; /* Unicode pour Strand */
     color: var(--strand-color);
 }
 
 /* Classe Barrier */
 .barrier::before {
-    content: '\E060'; /* Unicode pour Barrier */
+    content: '\E070'; /* Unicode pour Barrier */
     color: var(--mod-fg-color);
+    font-size: 20px;
 }
 
 /* Classe Unstoppable */
 .unstoppable::before {
-    content: '\E062'; /* Unicode pour Unstoppable */
+    content: '\E072'; /* Unicode pour Unstoppable */
     color: var(--mod-fg-color);
+    vertical-align: -2px;
+    font-size: 20px;
 }
 
 /* Classe Overload */
 .overload::before {
-    content: '\E061'; /* Unicode pour Overload */
+    content: '\E071'; /* Unicode pour Overload */
     color: var(--mod-fg-color);
+    vertical-align: -2px;
+    font-size: 20px;
 }
 
 /* Classe Hunter */
 .hunter::before {
     content: '\0041'; /* Hunter */
-    color: black;
+    color: White;
 }
 
 /* Classe Titan */
 .titan::before {
     content: '\0042'; /* Titan */
-    color: black;
+    color: White;
 }
 
 /* Classe Warlock */
 .warlock::before {
     content: '\0043'; /* Warlock */
-    color: black;
+    color: White;
 }
 
 /* Classe Bold */
@@ -163,6 +178,7 @@
 /* Classe Enhanced Arrow */
 .enhancedArrow {
     color: var(--exotic-label-color);
+    font-size: 20px;
 }
 
 /* Classe Green */
