@@ -1,130 +1,163 @@
-/* Classes générales */
-
-/* Classe Heavy (avec une icône d'un poids) */
-.heavy::before {
-    content: "⚖️"; /* Icône de poids */
-    font-weight: bold;
-    color: #f00; /* Rouge */
+/* Déclaration des variables de couleurs */
+:root {
+    --void-color: #B283CC;
+    --solar-color: #F16F27;
+    --arc-color: #7AECF3;
+    --stasis-color: #4D87FF;
+    --strand-color: #35E366;
+    --primary-color: #FFFFFF;
+    --special-color: #7AF48B;
+    --heavy-color: #B286FF;
+    --exotic-label-color: #B09C4F;
+    --legendary-label-color: #644D71;
+    --mod-fg-color: #0AF3F3;
 }
 
-/* Classe Primary (avec une icône de l'élément primaire) */
+/* Police personnalisée */
+@font-face {
+    font-family: 'Destiny2Class-ammo';
+    src: url('../fonts/Destiny2Class-ammo.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Destiny2Symbols';
+    src: url('../fonts/destiny_symbols_common.otf') format('truetype');
+}
+
+/* Classe Primary */
 .primary::before {
-    content: "⭐";
-    font-weight: bold;
-    color: #007bff; /* Bleu primaire */
+    font-family: 'Destiny2Class-ammo', sans-serif;
+    content: '\0045'; /* Icône primaire */
+    color: var(--primary-color);
 }
 
-/* Classe Special (avec un symbole spécial) */
+/* Classe Special */
 .special::before {
-    content: "✨";
-    font-style: italic;
-    color: #ff6347; /* Tomate */
+    font-family: 'Destiny2Class-ammo', sans-serif;
+    content: '\0044'; /* Icône spéciale */
+    color: var(--special-color);
 }
 
-/* Classe Green (avec une icône verte) */
-.green {
-    color: #28a745; /* Vert */
+/* Classe Heavy */
+.heavy::before {
+    font-family: 'Destiny2Class-ammo', sans-serif;
+    content: '\0046';
+    color: var(--heavy-color);
 }
 
-/* Classe Yellow (avec une icône jaune) */
-.yellow {
-    color: #ffc107; /* Jaune */
-}
-
-/* Classe Void (avec un symbole de vide) */
+/* Classe Void (icône Void) */
 .void::before {
-    content: "🌑";
-    color: #6f42c1; /* Violet */
+    content: ''; /* Icône void */
+    font-family: 'Destiny2Symbols', sans-serif;
+    color: var(--void-color);
 }
 
-/* Classe PVE (avec une icône PVE) */
+/* Classe PVE */
 .pve::before {
+    font-family: 'Destiny2Class-ammo', sans-serif;
     content: "🎮";
-    color: Blue;
-    font-weight: bold;
+    color: blue;
 }
 
-/* Classe PVP (avec une icône PVP) */
+/* Classe PVP */
 .pvp::before {
+    font-family: 'Destiny2Class-ammo', sans-serif;
     content: "⚔️";
     color: red;
+}
+
+/* Classe Solar */
+.solar::before {
+    font-family: 'Destiny2Symbols', sans-serif;
+    content: "";
+    color: var(--solar-color);
+}
+
+/* Classe Arc */
+.arc::before {
+    font-family: 'Destiny2Symbols', sans-serif;
+    content: "";
+    color: var(--arc-color);
+}
+
+/* Classe Stasis */
+.stasis::before {
+    font-family: 'Destiny2Symbols', sans-serif;
+    content: "";
+    color: var(--stasis-color);
+}
+
+/* Classe Strand */
+.strand::before {
+    font-family: 'Destiny2Symbols', sans-serif;
+    content: "";
+    color: var(--strand-color);
+}
+
+/* Classe Barrier */
+.barrier::before {
+    font-family: 'Destiny2Symbols', sans-serif;
+    content: "️";
+    color: var(--mod-fg-color);
+}
+
+/* Classe Unstoppable */
+.unstoppable::before {
+    font-family: 'Destiny2Symbols', sans-serif;
+    content: "";
+    color: var(--mod-fg-color);
+}
+
+/* Classe Overload */
+.overload::before {
+    font-family: 'Destiny2Symbols', sans-serif;
+    content: "";
+    color: var(--mod-fg-color);
+}
+
+/* Classe Hunter */
+.hunter::before {
+    font-family: 'Destiny2Class-ammo', sans-serif;
+    content: "\0041";
+    color: black;
+}
+
+/* Classe Titan */
+.titan::before {
+    font-family: 'Destiny2Class-ammo', sans-serif;
+    content: "\0042";
+    color: black;
+}
+
+/* Classe Warlock */
+.warlock::before {
+    font-family: 'Destiny2Class-ammo', sans-serif;
+    content: "\0043";
+    color: black;
+}
+
+/* Classe Bold */
+.bold {
     font-weight: bold;
 }
 
-/* Classe Title (avec une icône de titre) */
+
+/* Classe Title */
 .title {
     font-weight: bold;
 }
 
-/* Classe Enhanced Arrow (flèche vers le haut) */
+/* Classe Enhanced Arrow */
 .enhancedArrow {
-    color: orange;
-    font-weight: bold;
+    color: var(--exotic-label-color);
 }
 
-/* Classe Solar (avec une icône de soleil) */
-.solar {
-    color: #f39c12; /* Orange solaire */
+/* Classe Green */
+.green {
+    color: var(--special-color);
 }
 
-/* Classe Arc (avec une icône d'éclair) */
-.arc {
-    color: #3498db; /* Bleu arc */
-}
-
-/* Classe Stasis (avec une icône de glace) */
-.stasis {
-    color: #2980b9; /* Bleu glacial */
-}
-
-/* Classe Strand (avec une icône de branche) */
-.strand {
-    color: #16a085; /* Vert strand */
-}
-
-/* Classe Barrier (avec un symbole de protection) */
-.barrier::before {
-    content: "🛡️";
-    color: white;
-}
-
-/* Classe Unstoppable (avec un symbole de bras) */
-.unstoppable::before {
-    content: "💪";
-    color: white;
-}
-
-/* Classe Overload (avec un symbole de surcharge) */
-.overload::before {
-    content: "⚡";
-    color: white;
-}
-
-/* Classe Hunter (avec un symbole de chasseur) */
-.hunter::before {
-    content: "🏹";
-    background-color: #f39c12; /* Orange */
-    color: black;
-    font-weight: bold;
-}
-
-/* Classe Titan (avec un symbole de titan) */
-.titan::before {
-    content: "🛡️";
-    background-color: #3498db; /* Bleu */
-    color: white;
-    font-weight: bold;
-}
-
-/* Classe Warlock (avec un symbole de mage) */
-.warlock::before {
-    content: "🔮";
-    background-color: #9b59b6; /* Violet */
-    color: white;
-    font-weight: bold;
-}
-
-/* Classe Bold (mettre le texte en gras) */
-.bold {
-    font-weight: bold;
+/* yellow Green */
+.yellow {
+    color: var(--exotic-label-color);
 }
