@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Descriptions Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 calc(33% - 20px); /* 3 par ligne */
+            max-width: calc(33% - 20px);
+            box-sizing: border-box;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+        }
+
+        .spacer {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Descriptions Viewer</h1>
+    <div class="container" id="cards-container"></div>
+
+    <script>
+        const JSON_PATH = '/data/clarity.json'; // <<< Chemin absolu ou relatif vers ton fichier .json
+
+        async function loadDescriptions() {
+            try {
+                const response = await fetch(JSON_PATH);
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP : ${response.status}`);
+                }
+                const data = await response.json();
+                renderCards(data);
+            } catch (error) {
+                console.error('Erreur de chargement du JSON :', error);
+                document.getElementById('cards-container').innerHTML = "<p>Impossible de charger les données.</p>";
+            }
+        }
+
+        function renderCards(data) {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = ''; // vide au cas où
+
+            for (const id in data) {
+                const item = data[id];
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                const title = document.createElement('h2');
+                title.textContent = item.name;
+                card.appendChild(title);
+
+                item.descriptions.en.forEach(section => {
+                    if (section.linesContent) {
+                        const p = document.createElement('p');
+                        section.linesContent.forEach(line => {
+                            let element;
+                            if (line.link) {
+                                element = document.createElement('a');
+                                element.href = line.link;
+                                element.textContent = line.text;
+                                element.target = '_blank';
+                            } else {
+                                element = document.createElement('span');
+                                element.textContent = line.text;
+                            }
+
+                            if (line.classNames) {
+                                line.classNames.forEach(cls => {
+                                    element.classList.add(cls);
+                                });
+                            }
+
+                            p.appendChild(element);
+                            p.append(' '); // espace après chaque fragment
+                        });
+                        card.appendChild(p);
+                    } else if (section.classNames && section.classNames.includes('spacer')) {
+                        const spacer = document.createElement('div');
+                        spacer.className = 'spacer';
+                        card.appendChild(spacer);
+                    }
+                });
+
+                container.appendChild(card);
+            }
+        }
+
+        // Démarre le chargement au démarrage de la page
+        loadDescriptions();
+    </script>
+</body>
+</html>
