@@ -8,8 +8,8 @@
         /* Base */
         body {
             font-family: Arial, sans-serif;
-            background-color: #121212; /* Fond sombre */
-            color: #e0e0e0; /* Texte clair */
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
             padding: 20px;
         }
@@ -20,7 +20,6 @@
             color: #ffffff;
         }
 
-        /* Container pour les cartes */
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -28,9 +27,8 @@
             justify-content: center;
         }
 
-        /* Style des cartes */
         .card {
-            background: #1e1e1e; /* Fond carte */
+            background: #1e1e1e;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             padding: 20px;
@@ -45,7 +43,6 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.6);
         }
 
-        /* Textes dans les cartes */
         .card h2, .card h3 {
             margin-top: 0;
             color: #f0f0f0;
@@ -56,28 +53,32 @@
             line-height: 1.5;
         }
 
-        /* Espacement */
         .spacer {
             margin: 10px 0;
         }
 
-        /* Liens */
         .link a, .card a {
-            color: #90caf9; /* Bleu clair */
+            color: #90caf9;
             text-decoration: underline;
+        }
+
+        /* Bold style (optional) */
+        .card strong {
+            font-weight: bold;
+            color: white;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
             .card {
-                flex: 1 1 calc(50% - 20px); /* 2 par ligne */
+                flex: 1 1 calc(50% - 20px);
                 max-width: calc(50% - 20px);
             }
         }
 
         @media (max-width: 600px) {
             .card {
-                flex: 1 1 100%; /* 1 par ligne */
+                flex: 1 1 100%;
                 max-width: 100%;
             }
         }
@@ -90,6 +91,19 @@
 
     <script>
         const JSON_PATH = 'data/clarity.json';
+
+        function boldPatterns(text) {
+            if (!text) return "";
+
+            // 1. Supprimer les caractères invisibles (zéro-width, word joiner, etc.)
+            text = text.replace(/[\u200B-\u200D\u2060\uFEFF]/g, '');
+
+            // 2. Regex simplifiée pour matcher les nombres suivis de x, %, ou rien
+            const pattern = /(\d+(\.\d+)?)([x%])?/g;
+
+            // 3. Remplacer ce qui match par <strong>
+            return text.replace(pattern, '<strong>$&</strong>');
+        }
 
         async function loadDescriptions() {
             try {
@@ -137,10 +151,10 @@
                                 element = document.createElement('a');
                                 element.href = line.link;
                                 element.target = '_blank';
-                                element.textContent = line.text || "";
+                                element.innerHTML = boldPatterns(line.text || "");
                             } else if (line.text) {
                                 element = document.createElement('span');
-                                element.textContent = line.text;
+                                element.innerHTML = boldPatterns(line.text);
                             } else {
                                 element = document.createElement('span');
                                 element.textContent = "";

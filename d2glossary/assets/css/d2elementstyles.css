@@ -12,7 +12,6 @@
     --exotic-label-color: #B09C4F;
     --legendary-label-color: #644D71;
     --mod-fg-color: #0AF3F3;
-    --yellow-color: #ffc107;
 
     /* Polices */
     --font-class-ammo-activity: 'Destiny2Class-ammo-activity', sans-serif;
@@ -188,5 +187,5 @@
 
 /* Classe Yellow */
 .yellow {
-    color: var(--yellow-color);
+    color: var(--exotic-label-color);
 }
