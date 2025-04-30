@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>D2Glossary a déménagé !</title>
+  <meta http-equiv="refresh" content="10;url=https://d2glossary.fr">
+  <link rel="icon" type="image/png" href="https://d2glossary.fr/assets/src/ico/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="https://d2glossary.fr/assets/src/ico/favicon.svg" />
+  <link rel="shortcut icon" href="https://d2glossary.fr/assets/src/ico/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://d2glossary.fr/assets/src/ico/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="D2Glossary" />
+  <link rel="manifest" href="https://d2glossary.fr/assets/src/ico/site.webmanifest" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .logo {
+      width: 500px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0.2em 0;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 0.5em 0 1em;
+      max-width: 500px;
+    }
+
+    .timer {
+      font-size: 1.5em;
+      color: #00BCD4;
+      font-weight: bold;
+    }
+
+    a {
+      color: #1E90FF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo (remplace src par le chemin réel de ton logo) -->
+  <img src="https://d2glossary.fr/assets/src/ico/logo-d2glossaire.png" alt="Logo D2Glossary" class="logo">
+
+  <h1>Bienvenue sur D2Glossary !</h1>
+  <p>On a pris notre envol ✨ Le site a déménagé vers sa propre adresse.</p>
+  <p>Redirection en cours dans <span class="timer" id="countdown">10</span> secondes...</p>
+  <p>Si ça prend trop de temps, <a href="https://d2glossary.fr">clique ici</a>.</p>
+
+  <script>
+    let seconds = 10;
+    const countdownEl = document.getElementById('countdown');
+
+    const interval = setInterval(() => {
+      seconds--;
+      countdownEl.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
