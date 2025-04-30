@@ -12,6 +12,7 @@
     --exotic-label-color: #B09C4F;
     --legendary-label-color: #644D71;
     --mod-fg-color: #0AF3F3;
+    --yellow-color: #F3CF55;
 
     /* Polices */
     --font-class-ammo-activity: 'Destiny2Class-ammo-activity', sans-serif;
@@ -176,7 +177,7 @@
 
 /* Classe Enhanced Arrow */
 .enhancedArrow {
-    color: var(--exotic-label-color);
+    color: var(--yellow-color);
     font-size: 20px;
 }
 
