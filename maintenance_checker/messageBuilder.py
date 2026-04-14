@@ -28,8 +28,8 @@ OFFLINE_TRIGGER = "brought offline for expected maintenance"
 ONLINE_TRIGGER = "be able to log back"
 
 GAME_EMOJIS = {
-    "destiny": ":destlogo:",
-    "marathon": ":marathon:",
+    "destiny": "<:destlogo:710283624619966484>",
+    "marathon": "<:marathon:1111270580923142164>",
 }
 
 GAME_LABELS = {
