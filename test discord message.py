@@ -25,16 +25,16 @@ from maintenance_checker import get_maintenances
 # ──────────────────────────────────────────────
 
 OFFLINE_TRIGGER = "brought offline for expected maintenance"
+ONLINE_TRIGGER = "be able to log back"
 
-GAME_NAMES = {
-    "destiny": "Destiny 2",
-    "marathon": "Marathon",
+GAME_EMOJIS = {
+    "destiny": ":destlogo:",
+    "marathon": ":marathon:",
 }
 
-_MOIS_FR = {
-    1: "janvier", 2: "février", 3: "mars", 4: "avril",
-    5: "mai", 6: "juin", 7: "juillet", 8: "août",
-    9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre",
+GAME_LABELS = {
+    "destiny": "Destiny 2",
+    "marathon": "Marathon",
 }
 
 
@@ -57,8 +57,8 @@ def format_discord_message(data: dict) -> str | None:
     Formate un message Discord pour un jeu.
 
     Format :
-    __**Maintenance**__ et mise à jour aujourd'hui:
-    - :pencil:: ❖ Update X.X.X
+    :emoji: __**Maintenance Nom**__ du <t:UNIX:D>:
+    - :pencil:: Update X.X.X
     :x: Arrêt serv <t:UNIX:t> | :white_check_mark: Retour serv <t:UNIX:t> | :repeat: Débute: __**<t:UNIX:R>**__
 
     Retourne None si aucun événement ne matche.
@@ -68,39 +68,41 @@ def format_discord_message(data: dict) -> str | None:
     for event in data.get("events", []):
         steps = event.get("steps", [])
 
-        # Cherche le step avec le trigger
-        offline_idx = None
-        for i, step in enumerate(steps):
+        # Cherche le step offline
+        offline_step = None
+        for step in steps:
             for detail in step.get("details", []):
                 if OFFLINE_TRIGGER in detail.lower():
-                    offline_idx = i
+                    offline_step = step
                     break
-            if offline_idx is not None:
+            if offline_step is not None:
                 break
 
-        if offline_idx is None:
+        if offline_step is None or not offline_step.get("time_utc"):
             continue
 
-        offline_step = steps[offline_idx]
-        return_step = steps[offline_idx + 1] if offline_idx + 1 < len(steps) else None
-
-        if not offline_step.get("time_utc"):
-            continue
+        # Cherche le step online (retour serveurs)
+        online_step = None
+        for step in steps:
+            for detail in step.get("details", []):
+                if ONLINE_TRIGGER in detail.lower():
+                    online_step = step
+                    break
+            if online_step is not None:
+                break
 
         off_unix = _iso_to_unix(offline_step["time_utc"])
 
-        # Date en français depuis le timestamp UTC
-        dt = datetime.strptime(offline_step["time_utc"], "%Y-%m-%dT%H:%M:%SZ")
-        date_fr = f"{dt.day} {_MOIS_FR[dt.month]} {dt.year}"
-        game_name = GAME_NAMES.get(data["game"], data["game"].title())
+        game_emoji = GAME_EMOJIS.get(data["game"], "🎮")
+        game_label = GAME_LABELS.get(data["game"], data["game"].title())
 
         lines: list[str] = []
-        lines.append(f"__**Maintenance {game_name}**__ et mise à jour du {date_fr}:")
-        lines.append(f"- :pencil:: ❖ {event['event_type']}")
+        lines.append(f"{game_emoji} __**Maintenance {game_label}**__ du <t:{off_unix}:D>:")
+        lines.append(f"- :pencil:: {event['event_type']}")
 
         ret_part = ""
-        if return_step and return_step.get("time_utc"):
-            ret_unix = _iso_to_unix(return_step["time_utc"])
+        if online_step and online_step.get("time_utc"):
+            ret_unix = _iso_to_unix(online_step["time_utc"])
             ret_part = f" | :white_check_mark: Retour serv <t:{ret_unix}:t>"
 
         lines.append(
