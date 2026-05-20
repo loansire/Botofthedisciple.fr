@@ -48,6 +48,22 @@ def _iso_to_unix(iso_str: str) -> int:
     return int(dt.timestamp())
 
 
+def _format_local_datetime(iso_str: str) -> str:
+    """
+    Convertit une date ISO 8601 (Zendesk updated_at) en heure locale
+    au format 'JJ/MM/AAAA HH:MM'.
+
+    Tolérant : accepte les suffixes 'Z' ou '+00:00'.
+    """
+    # datetime.fromisoformat n'accepte 'Z' qu'à partir de Python 3.11
+    cleaned = iso_str.replace("Z", "+00:00")
+    dt_utc = datetime.fromisoformat(cleaned)
+    if dt_utc.tzinfo is None:
+        dt_utc = dt_utc.replace(tzinfo=timezone.utc)
+    dt_local = dt_utc.astimezone()  # timezone système
+    return dt_local.strftime("%d/%m/%Y %H:%M")
+
+
 # ──────────────────────────────────────────────
 # Formatage Discord
 # ──────────────────────────────────────────────
@@ -125,14 +141,20 @@ def format_discord_message(data: dict) -> str | None:
 
 async def run(games: list[str]) -> None:
     for game in games:
-        print(f"\n{'='*50}")
-        print(f" DISCORD MESSAGE — {game.upper()}")
-        print(f"{'='*50}\n")
-
         data = await get_maintenances(game)
         if data is None:
             print(f"❌ Impossible de récupérer les données pour {game}")
             continue
+
+        # Affiche la date de dernière mise à jour de l'article Zendesk
+        updated_at = data.get("article_updated_at")
+        if updated_at:
+            try:
+                print(f"📅 Article {game} mis à jour le : {_format_local_datetime(updated_at)}")
+            except (ValueError, TypeError):
+                print(f"📅 Article {game} mis à jour le : {updated_at} (format brut)")
+        else:
+            print(f"📅 Article {game} : date de mise à jour inconnue")
 
         message = format_discord_message(data)
         if message is None:
@@ -140,8 +162,6 @@ async def run(games: list[str]) -> None:
             continue
 
         print(message)
-        print(f"\n{'─'*50}")
-        print(f"📏 {len(message)} caractères")
 
 
 def main() -> None:
