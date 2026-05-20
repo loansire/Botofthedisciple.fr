@@ -38,6 +38,7 @@ async def get_maintenances(game: str) -> Optional[dict]:
         Un dict prêt à json.dumps() :
         {
             "game": "destiny",
+            "article_updated_at": "2026-05-04T08:30:00Z",  # ISO 8601, peut être None
             "events_count": 2,
             "events": [ ... ]
         }
@@ -48,7 +49,7 @@ async def get_maintenances(game: str) -> Optional[dict]:
     """
     game_enum = resolve_game(game)
 
-    body = await fetch_article_body(game_enum)
+    body, updated_at = await fetch_article_body(game_enum)
     if body is None:
         logger.error("Impossible de récupérer l'article pour %s", game_enum.value)
         return None
@@ -57,6 +58,7 @@ async def get_maintenances(game: str) -> Optional[dict]:
 
     return {
         "game": game_enum.value,
+        "article_updated_at": updated_at,
         "events_count": len(events),
         "events": [e.to_dict() for e in events],
     }
